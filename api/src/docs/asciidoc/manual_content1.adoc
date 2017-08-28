@@ -1,0 +1,13 @@
+== 系统测试用户信息
+
+现提供以下测试用户，分别为：
+* 位于河北省省级管理部门的用户：admin:admin
+* 位于测试区县器具用户的: user1:user1
+* 位于测试区县管理部门的: user2:user2
+* 位于测试区县技术机构的: user3:user3
+* 位于测试市管理部门的: user4:user4
+* 位于测试市技术机构的: user5:user5
+
+=== Sub chapter
+
+Dummy text of sub chapter
