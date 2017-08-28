@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pinyin": "qingxuanze"
+    },
+    {
+        "id": 1,
+        "name": "河北制造厂",
+        "pinyin": "hebeizhizaochang"
+    },
+    {
+        "id": 2,
+        "name": "天津制造厂",
+        "pinyin": "tianjinzhizaochang"
+    },
+    {
+        "id": 3,
+        "name": "廊坊制造厂",
+        "pinyin": "lagfangzhizaochang"
+    }
+]

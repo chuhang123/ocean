@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "器具用户申请1",
+        "contact": "022-3583546",
+        "pcode": "028945",
+        "apply_time": "2017/1/1",
+        "is_done": "未办结",
+        "contact_name": "器具用户1的张三",
+        "user_id": "器具用户1",
+        "department_id": "器具用户1",
+        "ApplyType": "节点1",
+        "status": "在办  传给下一节点  办结"
+    },{
+        "id": 2,
+        "name": "器具用户申请1",
+        "contact": "022-3583546",
+        "pcode": "028945",
+        "apply_time": "2017/1/1",
+        "is_done": "未办结",
+        "contact_name": "器具用户1的张三",
+        "user_id": "器具用户1",
+        "department_id": "器具用户1",
+        "ApplyType": "节点2",
+        "status": "在办  退回上一申请人  传给下一节点  办结"
+    },{
+        "id": 3,
+        "name": "器具用户申请1",
+        "contact": "022-3583546",
+        "pcode": "028945",
+        "apply_time": "2017/1/1",
+        "is_done": "未办结",
+        "contact_name": "器具用户1的张三",
+        "user_id": "器具用户1",
+        "department_id": "器具用户1",
+        "ApplyType": "节点3",
+        "status": "在办  退回上一申请人  退回上一节点  传给下一节点  办结"
+    },{
+        "id": 4,
+        "name": "器具用户申请1",
+        "contact": "022-3583546",
+        "pcode": "028945",
+        "apply_time": "2017/1/1",
+        "is_done": "未办结",
+        "contact_name": "器具用户1的张三",
+        "user_id": "器具用户1",
+        "department_id": "器具用户1",
+        "ApplyType": "节点1",
+        "status": "在办  退回上一申请人  退回上一节点  传给下一节点  办结"
+    }
+]

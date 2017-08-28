@@ -1,0 +1,6 @@
+<div ng-show="showChoose">
+    <label ng-repeat="list in lists">
+        &nbsp;<input name="{{radioId}}" type="radio" ng-model="ngModel" ng-click="changeData(list)">
+        &nbsp;&nbsp;{{list.name}}&nbsp;&nbsp;
+    </label>
+</div>

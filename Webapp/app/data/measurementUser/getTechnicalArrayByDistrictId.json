@@ -1,0 +1,28 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pingyin": "qingxuanze"
+    },
+    {
+        "id": 1,
+        "name": "技术机构一",
+        "pingyin": "yi"
+    },
+    {
+        "id": 2,
+        "name": "技术机构二",
+        "pingyin": "er"
+    },
+    {
+        "id": 3,
+        "name": "技术机构三",
+        "pingyin": "san"
+    },
+    {
+        "id": 4,
+        "name": "技术机构四",
+        "pingyin": "si"
+    }
+]
+

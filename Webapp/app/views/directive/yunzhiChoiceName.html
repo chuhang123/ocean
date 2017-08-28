@@ -1,0 +1,7 @@
+<!--选择的名称-->
+<ui-select ng-model="choiceName.selected" theme="bootstrap" ng-change="updateModel(choiceName.selected)" ng-hide="hide">
+    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+    <ui-select-choices repeat="choiceName in choiceNames | propsFilter: {name: $select.search, pinyin: $select.search}">
+        <div ng-bind-html="choiceName.name | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>

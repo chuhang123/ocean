@@ -1,0 +1,57 @@
+<div class="row">
+    <form class="form-horizontal ng-pristine ng-valid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">学科类别:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-discipline ng-model="discipline"></yunzhi-discipline>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-xs-2 col-xs-offset-10">
+                    <a ui-sref="system.qualifierCertificateTypeAdd({disciplineId: discipline.id})"><button class="btn btn-info btn-sm" type="button"><i class="fa fa-plus"></i>&nbsp;新增</button></a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>学科类别</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="(key, object) in data.content">
+                                <td>{{object.name}}</td>
+                                <td>{{object.discipline}}</td>
+                                <td>
+                                    <yunzhi-access data-route="system.qualifierCertificateType"><a ui-sref="system.qualifierCertificateTypeEdit({data: object})">编辑</a></yunzhi-access> 删除</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <yunzhi-page data-total-pages="data.totalPages" data-total-elements="data.totalElements" data-first="data.first" data-last="data.last" data-number="data.number" data-size="data.size" data-number-of-elements="data.numberOfElements"></yunzhi-page>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

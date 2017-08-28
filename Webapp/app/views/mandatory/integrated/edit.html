@@ -1,0 +1,93 @@
+<div ng-controller="MandatoryIntegratedEditCtrl">
+    <div class="row">
+        <div class="col-lg-6">
+            <form method="get" class="form-horizontal" novalidate name="editForm" ng-submit="save()">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">状态</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static ng-binding">{{mandatoryInstrument | MandatoryInstrumentStatus}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">制造单位</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static ng-binding">{{mandatoryInstrument.generativeDepartment.name}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">出厂编号</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static ng-binding">{{mandatoryInstrument.serialNum}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">许可证号</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static ng-binding">{{mandatoryInstrument.licenseNum}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">测量范围</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static ng-binding">{{mandatoryInstrument.measureScaleName}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">准确度等级</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static ng-binding">{{mandatoryInstrument.accuracyName}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">型号规格</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static ng-binding">{{mandatoryInstrument.specificationName}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">用途</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static ng-binding">{{mandatoryInstrument.purpose.name}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">首次检定时间</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static ng-binding">{{mandatoryInstrument.firstCheckDate | date}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">检定周期</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static ng-binding">{{mandatoryInstrument | CheckCycle}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">安装地点</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="mandatoryInstrument.fixSite" name="fixSite" required>
+                        <div class="m-t-xs" ng-show="editForm.fixSite.$invalid && editForm.fixSite.$touched">
+                            <span class="text-danger" ng-show="editForm.fixSite.$error "><i class="fa fa-exclamation-triangle"></i> 请输入安装地点</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">器具名称</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="mandatoryInstrument.name" name="name" required>
+                        <div class="m-t-xs" ng-show="editForm.name.$invalid && editForm.name.$touched">
+                            <span class="text-danger" ng-show="editForm.name.$error "><i class="fa fa-exclamation-triangle"></i> 请输入器具名称</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-8 col-sm-offset-3">
+                        <button class="btn btn-primary" type="submit" ng-hide="editForm.$submitted"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;保存</button>
+                        <button class="btn btn-primary" type="button" ng-show="editForm.$submitted" disabled="true"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;数据处理中...</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

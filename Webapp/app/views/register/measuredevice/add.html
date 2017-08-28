@@ -1,0 +1,78 @@
+<div class="row" ng-controller="RegisterMeasuredeviceAddCtrl">
+    <div class="col-lg-6">
+        <form method="get" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">区域(主体)</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.district">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">机构代码</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.code">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">单位名称</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">邮政编号</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.pcode">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">地址</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.address">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">法人姓名</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.legal_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">法人联系方式</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.legal_phone">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">注册人姓名</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.registrant_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">注册人联系方式</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.registrant_phone">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">注册日期</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.register_time">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">更新日期</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.update_time">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <button class="btn btn-default" ng-click="addsubmit()">保存并添加</button>
+                    <button class="btn btn-primary" ng-click="btnsubmit()">保存</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

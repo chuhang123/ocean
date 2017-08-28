@@ -1,0 +1,102 @@
+<div class="row" ng-controller="StandardFileDetailCtrl">
+    <div class="row">
+            <div class="row" ng-show="isShowAddOrOperation">
+                <div class="col-xs-2 col-xs-offset-10">
+                    <a ui-sref="standard.FileDetailAdd({deviceSet: deviceSet})">
+                        <button class="btn btn-info btn-sm" type="button"><i class="fa fa-plus"></i>&nbsp;新增</button>
+                    </a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <div class="panel-heading">
+                            主标准器信息
+                        </div>
+                        <thead>
+                        <tr>
+                            <th>代码</th>
+                            <th>名称</th>
+                            <th>准确度等级</th>
+                            <th>测量范围</th>
+                            <th>型号规格</th>
+                            <th>制造单位</th>
+                            <th>许可证号</th>
+                            <th>出厂编号</th>
+                            <th>检定信息</th>
+                            <th ng-show="isShowAddOrOperation">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="object in data | filter: {main: true}">
+                            <td>{{object.code}}</td>
+                            <td>{{object.name}}</td>
+                            <td>{{object.accuracy.value}}</td>
+                            <td>{{object.measureScale.value}}</td>
+                            <td>{{object.specification.value}}</td>
+                            <td>{{object.manufacturerName}}</td>
+                            <td>{{object.licenseNum}}</td>
+                            <td>{{object.factoryNum}}</td>
+                            <td>
+                                <yunzhi-access data-route="standard.File"><a
+                                    ui-sref="standard.FileCheckDetail({standardDevice: object})" class="btn btn-xs btn-outline btn-info
+"><i class="pe-7s-look"></i>&nbsp;查看</a></yunzhi-access>
+                            </td>
+                            <td ng-show="isShowAddOrOperation">
+                                <yunzhi-access data-route="standard.File"><a
+                                    ui-sref="standard.FileDetailEdit({standardDevice: object})" class="btn btn-info btn-xs"><i class="fa fa-paste"></i>&nbsp;编辑&nbsp;</a></yunzhi-access>
+                                <a ng-click="delete(object.id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <div class="panel-heading">
+                            配套装置信息
+                        </div>
+                        <thead>
+                        <tr>
+                            <th>代码</th>
+                            <th>名称</th>
+                            <th>准确度等级</th>
+                            <th>测量范围</th>
+                            <th>型号规格</th>
+                            <th>制造单位</th>
+                            <th>许可证号</th>
+                            <th>出厂编号</th>
+                            <th>检定信息</th>
+                            <th ng-show="isShowAddOrOperation">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="object in data | filter:{main: false}">
+                            <td>{{object.code}}</td>
+                            <td>{{object.name}}</td>
+                            <td>{{object.accuracy.value}}</td>
+                            <td>{{object.measureScale.value}}</td>
+                            <td>{{object.specification.value}}</td>
+                            <td>{{object.manufacturerName}}</td>
+                            <td>{{object.licenseNum}}</td>
+                            <td>{{object.factoryNum}}</td>
+                            <td>
+                                <yunzhi-access data-route="standard.File"><a
+                                    ui-sref="standard.FileCheckDetail({standardDevice: object})" class="btn btn-xs btn-outline btn-info
+"><i class="pe-7s-look"></i>&nbsp;查看</a></yunzhi-access>
+                            </td>
+                            <td ng-show="isShowAddOrOperation">
+                                <yunzhi-access data-route="standard.File"><a
+                                    ui-sref="standard.FileDetailEdit({standardDevice: object})" class="btn btn-info btn-xs"><i class="fa fa-paste"></i>&nbsp;编辑&nbsp;</a></yunzhi-access>
+                                <a ng-click="delete(object.id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

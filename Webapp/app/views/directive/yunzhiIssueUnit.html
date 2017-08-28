@@ -1,0 +1,7 @@
+<!--发证单位-->
+<ui-select ng-model="issueUnit.selected" theme="bootstrap" ng-disabled="disabled">
+    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+    <ui-select-choices repeat="issueUnit in issueUnits | propsFilter: {name: $select.search, pinyin: $select.search}">
+        <div ng-bind-html="issueUnit.name | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>

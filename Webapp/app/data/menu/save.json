@@ -1,0 +1,15 @@
+[
+    {
+        "id": 7,
+        "name": "菜单管理 ",
+        "pinyin": "",
+        "operatorId": "",
+        "pid": "3",
+        "url": "/system/Menu",
+        "weight": "1",
+        "status": "0",
+        "remark": "",
+        "request": "get",
+        "isShow": "0"
+    }
+]

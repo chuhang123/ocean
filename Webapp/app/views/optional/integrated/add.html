@@ -1,0 +1,95 @@
+<div class="row" ng-controller="OptionalIntegratedAddCtrl">
+    <div class="col-lg-6">
+        <form method="get" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">市</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.region">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">区/县</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.county">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">用户</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.user">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">名称</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">状态</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.status">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">规格型号</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.type">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">用途</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.purpose">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">测量范围</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.measureScale">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">准确度等级</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.rank">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">制造单位</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.manufactureUnit">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">出厂编号</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.factoryNum">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">安装地点</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.fixSite">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">许可证号</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.licenseNum">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <button class="btn btn-default" ng-click="saveAndNew()">保存并新建</button>
+                    <button class="btn btn-primary" ng-click="saveAndClose()">保存</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <div ng-bind="info" class="text-success"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

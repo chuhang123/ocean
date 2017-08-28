@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-lg-6">
+        <form method="get" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">姓名</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.name" name="name" required>
+                    <div class="m-t-xs" ng-show="myForm.name.$dirty && myForm.name.$invalid">
+                        <span class="text-danger" ng-show="myForm.name.$error.required"><i class="fa fa-exclamation-triangle"></i> 姓名是必须的。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">资格证类别</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.qualifierCertificateType" name="qualifierCertificateType" required>
+                    <div class="m-t-xs" ng-show="myForm.qualifierCertificateType.$dirty && myForm.qualifierCertificateType.$invalid">
+                        <span class="text-danger" ng-show="myForm.qualifierCertificateType.$error.required"><i class="fa fa-exclamation-triangle"></i> 资格证类别是必须的。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">发证日期</label>
+                <div class="col-sm-8">
+                    <yunzhi-date ng-model="data.issueDate" name="issueDate" required></yunzhi-date>
+                    <div class="m-t-xs" ng-show="myForm.issueDate.$dirty && myForm.issueDate.$invalid">
+                        <span class="text-danger" ng-show="myForm.issueDate.$error.required"><i class="fa fa-exclamation-triangle"></i> 发证日期是必须的。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">有效期至</label>
+                <div class="col-sm-8">
+                    <yunzhi-date ng-model="data.validityDate" name="validityDate" required></yunzhi-date>
+                    <div class="m-t-xs" ng-show="myForm.validityDate.$dirty && myForm.validityDate.$invalid">
+                        <span class="text-danger" ng-show="myForm.validityDate.$error.required"><i class="fa fa-exclamation-triangle"></i> 有效期至是必须的。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">报警日期</label>
+                <div class="col-sm-8">
+                    <yunzhi-date ng-model="data.alertDate" name="alertDate" required></yunzhi-date>
+                    <div class="m-t-xs" ng-show="myForm.alertDate.$dirty && myForm.alertDate.$invalid">
+                        <span class="text-danger" ng-show="myForm.alertDate.$error.required"><i class="fa fa-exclamation-triangle"></i> 报警日期是必须的。</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <button class="btn btn-default" type="button" ng-click="saveAndNew()" ng-show="{{isAdd}}" ng-disabled="myForm.$invalid"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;保存并新建</button>
+                    <button class="btn btn-primary" type="button" ng-click="saveAndClose()" ng-disabled="myForm.$invalid"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;保存</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <div ng-bind="info" class="text-success"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

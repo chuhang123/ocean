@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-lg-4">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+               电导率校准曲线
+            </div>
+            <div class="panel-body">
+                <div>
+                    <c3chart bindto-id="chart1">
+                        <chart-column column-id="data 1"
+                                      column-values="40,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150,40, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150, 40, 30, 200, 100, 400, 150, 30, 200, 100, 400, 150, 250"
+                                      column-type="line" column-color="#62cb31"/>
+                    </c3chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-2">
+        <button class="btn btn-info btn-sm" type="button">导出excel文件</button>
+    </div>
+    <div class="col-xs-2 col-xs-offset-8">
+        共有4条数据
+    </div>
+</div>
+<table cellpadding="1" cellspacing="1" class="table table-bordered table-striped"
+       style="table-layout: fixed; width: 100%">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>温度原始值</th>
+        <th>温度值（℃）</th>
+        <th>日期</th>
+        <th>时间</th>
+        <th>数据标示</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="data in datas">
+        <td style="word-wrap: break-word;">{{$index + 1}}</td>
+        <td>{{data.original}}</td>
+        <td>{{data.value}}</td>
+        <td>{{data.date}}</td>
+        <td>{{data.time}}</td>
+        <td>{{status}}
+            <span class="badge " ng-class="{'badge-success': data.status == 0, 'badge-primary': data.status == -1, 'badge-danger': data.status == 1, 'badge-info': data.status == 2}">
+                            <div ng-show="data.status == -1">pd</div>
+                            <div ng-show="data.status == 0">cd</div>
+                            <div ng-show="data.status == 1">sd</div>
+                            <div ng-show="data.status == 2">td</div>
+                        </span>
+        </td>
+    </tr>
+    </tbody>
+</table>

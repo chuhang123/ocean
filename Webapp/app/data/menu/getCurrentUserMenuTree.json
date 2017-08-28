@@ -1,0 +1,424 @@
+[
+    {
+        "id": 1,
+        "name": "仪表台",
+        "module": "main",
+        "controller": "dashboard",
+        "_children": []
+    },
+    {
+        "id": 2,
+        "name": "大数据平台",
+        "module": "main",
+        "controller": "analytics",
+        "_children": []
+    },
+    {
+        "id": 3,
+        "name": "强制检定管理",
+        "module": "mandatory",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 19,
+                "name": "强制检定计量器具用户档案",
+                "module": "mandatory",
+                "controller": "NumberCategories"
+            },           
+            {
+                "id": 20,
+                "name": "用户强制检定计量器具档案",
+                "module": "mandatory",
+                "controller": "Integrated"
+            },
+            {
+                "id": 21,
+                "name": "用户检定申请",
+                "module": "mandatory",
+                "controller": "Userapplication"
+            },
+            {
+                "id": 22,
+                "name": "机构申请回复",
+                "module": "mandatory",
+                "controller": "Reply"
+            },
+            {
+                "id": 23,
+                "name": "检定信息查询",
+                "module": "mandatory",
+                "controller": "CheckDetail"
+            },
+            {
+                "id": 24,
+                "name": "强制检定计量器具合格率统计",
+                "module": "mandatory",
+                "controller": "PassRate"
+            },
+            {
+                "id": 25,
+                "name": "强制检定计量器具年检定量统计",
+                "module": "mandatory",
+                "controller": "Qualified"
+            },
+            {
+                "id": 26,
+                "name": "民用四表",
+                "module": "mandatory",
+                "controller": "Instrument"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "非强制检定管理",
+        "module": "optional",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 27,
+                "name": "非强制检定工作计量器具档案",
+                "module": "optional",
+                "controller": "NumberSubjects"
+            },
+            {
+                "id": 28,
+                "name": "非强制检定工作计量器具查询",
+                "module": "optional",
+                "controller": "Integrated"
+            },            
+            {
+                "id": 29,
+                "name": "用户检定申请",
+                "module": "optional",
+                "controller": "Userapplication"
+            },
+            {
+                "id": 30,
+                "name": "机构申请回复",
+                "module": "optional",
+                "controller": "Reply"
+            },
+            {
+                "id": 31,
+                "name": "检定信息查询",
+                "module": "optional",
+                "controller": "CheckDetail"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "企业行业最高计量标准管理",
+        "module": "higheststandard",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 32,
+                "name": "企业行业最高计量标准档案",
+                "module": "higheststandard",
+                "controller": "File"
+            }           
+        ]
+    },
+    {
+        "id": 6,
+        "name": "技术机构管理",
+        "module": "standard",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 33,
+                "name": "技术机构授权检定项目一览表",
+                "module": "standard",
+                "controller": "Authorization"
+            },   
+            {
+                "id": 34,
+                "name": "技术机构计量标准装置一览表",
+                "module": "standard",
+                "controller": "File"
+            },           
+            {
+                "id": 35,
+                "name": "技术机构固定资产一览表",
+                "module": "standard",
+                "controller": "Fixedassets"
+            },
+            {
+                "id": 36,
+                "name": "技术机构能力建设申请进度表",
+                "module": "standard",
+                "controller": "Ability"
+            },
+            {
+                "id": 37,
+                "name": "技术机构人员一览表",
+                "module": "standard",
+                "controller": "Personnelfile"
+            },
+            {
+                "id": 38,
+                "name": "检定进度查询",
+                "module": "standard",
+                "controller": "Schedule"
+            },
+            {
+                "id": 39,
+                "name": "计量器具授权检定机构查询",
+                "module": "standard",
+                "controller": "Technology"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "计量器具产品管理",
+        "module": "measuringdevice",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 40,
+                "name": "计量器具产品档案",
+                "module": "measuringdevice",
+                "controller": "Integrated"
+            }, 
+            {
+                "id": 41,
+                "name": "计量器具生产企业档案",
+                "module": "measuringdevice",
+                "controller": "ApplianceArchives"
+            }                        
+        ]
+    },
+    {
+        "id": 8,
+        "name": "人员资质管理",
+        "module": "personnel",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 42,
+                "name": "综合查询",
+                "module": "personnel",
+                "controller": "PersonnelFile"
+            }        
+        ]
+    },
+    {
+        "id": 9,
+        "name": "注册信息",
+        "module": "register",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 43,
+                "name": "强制检定计量器具用户注册信息",
+                "module": "register",
+                "controller": "MeasureDevice"
+            },
+            {
+                "id": 44,
+                "name": "技术机构注册信息",
+                "module": "register",
+                "controller": "Technology"
+            },
+            {
+                "id": 45,
+                "name": "定量包装商品生产、销售企业注册信息",
+                "module": "register",
+                "controller": "Enterprise"
+            },
+            {
+                "id": 46,
+                "name": "重点用能企业注册信息",
+                "module": "register",
+                "controller": "Energycompanies"
+            },
+            {
+                "id": 47,
+                "name": "社会公众注册信息",
+                "module": "register",
+                "controller": "Society"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "行政许可",
+        "module": "business",
+        "controller": "#",
+        "_children": 
+        [
+           {
+                "id": 48,
+                "name": "计量标准建标考核（复查）申请",
+                "module": "business",
+                "controller": "Measurement"
+            },
+            {
+                "id": 49,
+                "name": "技术机构考核（复查）申请",
+                "module": "business",
+                "controller": "Technology"
+            },
+            {
+                "id": 50,
+                "name": "计量器具生产许可证(年检)申请",
+                "module": "business",
+                "controller": "MeasureTool"
+            }  
+        ]
+    },
+    {
+        "id": 11,
+        "name": "我的工作",
+        "module": "mywork",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 51,
+                "name": "未办",
+                "module": "mywork",
+                "controller": "Unhandle"
+            },
+            {
+                "id": 52,
+                "name": "搁置",
+                "module": "mywork",
+                "controller": "HoldOn"
+            },
+            {
+                "id": 53,
+                "name": "在办",
+                "module": "mywork",
+                "controller": "Handling"
+            },
+            {
+                "id": 54,
+                "name": "已办",
+                "module": "mywork",
+                "controller": "Handled"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "角色管理",
+        "module": "role",
+        "controller": "#",
+        "_children": 
+        [
+             {
+                "id": 55,
+                "name": "角色管理",
+                "module": "role",
+                "controller": "Rolefile"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "用户管理",
+        "module": "user",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 56,
+                "name": "用户管理",
+                "module": "user",
+                "controller": "Userfile"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "岗位管理",
+        "module": "post",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 56,
+                "name": "岗位管理",
+                "module": "post",
+                "controller": "Postfile"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "其他功能",
+        "module": "others",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 57,
+                "name": "诚信体系红黑榜",
+                "module": "others",
+                "controller": "Integritylist"
+            },
+            {
+                "id": 58,
+                "name": "技术监督质量信息平台链接",
+                "module": "others",
+                "controller": "Platform"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": "工作流类",
+        "module": "workflowtype",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 59,
+                "name": "工作流管理",
+                "module": "workflowtype",
+                "controller": "WorkFlowTypeManage"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": "系统设置",
+        "module": "system",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 60,
+                "name": "菜单管理",
+                "module": "system",
+                "controller": "Menu"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "name": "个人中心",
+        "module": "personalcenter",
+        "controller": "#",
+        "_children": 
+        [
+            {
+                "id": 61,
+                "name": "个人中心",
+                "module": "personalcenter",
+                "controller": "PersonalInfoManage"
+            }
+        ]
+    }
+]

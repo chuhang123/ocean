@@ -1,0 +1,73 @@
+<div class="row" ng-controller="OptionalNumbersubjectsIndexCtrl">
+    <form class="form-horizontal ng-pristine ng-valid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">区域:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-district ng-model="district"></yunzhi-district>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">器具用户:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-measurement-user data-district="district" ng-model="measureUser"></yunzhi-measurement-user>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                            <div class="row">
+                                <div class="col-sm-4 com-sm-offset-4 text-center">
+                                    <yunzhi-exportbtn></yunzhi-exportbtn>
+                                </div>
+                            </div>
+                            <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>主体</th>
+                                        <th>几何量</th>
+                                        <th>化学</th>
+                                        <th>温度</th>
+                                        <th>力学</th>
+                                        <th>电磁</th>
+                                        <th>电子</th>
+                                        <th>时间频率</th>
+                                        <th>光学</th>
+                                        <th>声学</th>
+                                        <th>合计</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="data in dataes">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{data.subject}}</td>
+                                        <td>{{data.geometry}}</td>
+                                        <td>{{data.chemistry}}</td>
+                                        <td>{{data.temperature}}</td>
+                                        <td>{{data.mechanics}}</td>、
+                                        <td>{{data.electromagnetics}}</td>
+                                        <td>{{data.electron}}</td>
+                                        <td>{{data.timeFrequency}}</td>
+                                        <td>{{data.optics}}</td>
+                                        <td>{{data.acoustics}}</td>
+                                        <td>{{data.sum}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

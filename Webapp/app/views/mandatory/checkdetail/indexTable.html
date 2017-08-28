@@ -1,0 +1,154 @@
+<div class="table-responsive">
+    <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+        <div class="row">
+            <div class="col-sm-4">
+                <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+            </div>
+            <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped"
+                   style="table-layout: fixed; width: 100%">
+                <thead>
+                <tr>
+                <tr>
+                    <th width="2%">型号</th>
+                    <th width="2%">名称</th>
+                    <th width="2%">编号</th>
+                    <th width="2%">校准参数</th>
+                    <th width="2%">校准次数</th>
+                    <th width="3%">首次校准时间</th>
+                    <th width="3%">最近校准时间</th>
+                    <!--下次校准时间 = 最近校准时间 + 一年-->
+                    <!-- 一般情况下加一年，但是也有可能更改，建议写在配置文件中 -->
+                    <th width="3%">下次校准时间</th>
+                    <th width="2%">用户名称</th>
+                    <th width="2%">时间轴</th>
+                </tr>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="word-wrap: break-word;">SZP1-1U</td>
+                    <td>感应耦合传输式CTD测量仪</td>
+                    <td>Y38-193</td>
+                    <td>
+                        <table class="table" style="background-color: transparent;">
+                            <thead>
+                                <tr>
+                                    <td>温度</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>压力</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style="word-wrap: break-word;">
+                        <table class="table" style="background-color: transparent;">
+                            <thead>
+                                <tr>
+                                    <td>2</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style="word-wrap: break-word;">
+                        <table class="table" style="background-color: transparent;">
+                            <thead>
+                                <tr>
+                                    <td>2015-04-24</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2014-04-24</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style="word-wrap: break-word;">
+
+                        <table class="table" style="background-color: transparent;">
+                            <thead>
+                                <tr>
+                                    <td>2017-02-10</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2017-02-18</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style="word-wrap: break-word;">
+                        <table class="table" style="background-color: transparent;">
+                            <thead>
+                            <tr>
+                                <td>2018-02-10</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2018-02-18</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+
+                    <td style="word-wrap: break-word;">
+                        <table class="table" style="background-color: transparent;">
+                            <thead>
+                                <tr>
+                                    <td>张三</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>李四</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style="word-wrap: break-word;">
+
+                        <table class="table" style="background-color: transparent;">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <button class="btn btn-xs btn-outline btn-info"><i
+                                            class="pe-7s-look"></i>&nbsp;查看
+                                        </button>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button class="btn btn-xs btn-outline btn-info"><i
+                                            class="pe-7s-look"></i>&nbsp;查看
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <yunzhi-page
+                data-total-pages="data.totalPages"
+                data-total-elements="data.totalElements"
+                data-first="data.first"
+                data-last="data.last"
+                data-number="data.number"
+                data-size="data.size"
+                data-number-of-elements="data.numberOfElements"></yunzhi-page>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<!--yunzhiAuditDepartmentOfMandatoryInstrument.html-->
+<div ng-show="showOne">
+    {{ngModel | departmentShowCheckAbility : showCheckAbilyty}}
+</div>
+<div ng-hide="showOne">
+    <label ng-repeat="list in lists">
+        <input name="{{name}}" type="radio" ng-model="ngModel" ng-value="list" ng-click="update(list)">&nbsp;&nbsp;{{list | departmentShowCheckAbility}}&nbsp;&nbsp;
+    </label>
+</div>

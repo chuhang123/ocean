@@ -1,0 +1,42 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pinyin": "qingxuanze"
+    },
+    {
+        "id": 1,
+        "name": "+1mm",
+        "pinyin": "zhengyimm"
+    },
+    {
+        "id": 2,
+        "name": "+1g",
+        "pinyin": "zhengyig"
+    },
+    {
+        "id": 3,
+        "name": "+1mm",
+        "pinyin": "zhengyimm"
+    },
+    {
+        "id": 4,
+        "name": "+1cm",
+        "pinyin": "zhengyicm"
+    },
+    {
+        "id": 5,
+        "name": "+100g",
+        "pinyin": "zhengyibaig"
+    },
+    {
+        "id": 6,
+        "name": "+1Kg",
+        "pinyin": "zhengyikg"
+    },
+    {
+        "id": 7,
+        "name": "+10Kg",
+        "pinyin": "zhengshikg"
+    }
+]

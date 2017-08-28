@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "管理部门",
+        "discription": "这是管理部门的描述",
+        "pinyin":"guanlibumen"
+    },
+    {
+        "id": 2,
+        "name": "技术机构",
+        "discription": "这是技术机构的描述",
+        "pinyin":"jishujigou"
+    },
+    {
+        "id": 3,
+        "name": "器具用户",
+        "discription": "这是器具用户的描述",
+        "pinyin":"qijuyonghu"
+    },
+    {
+        "id": 4,
+        "name": "生产企业",
+        "discription": "这是生产企业的描述",
+        "pinyin":"shengchanqiye"
+    }
+]

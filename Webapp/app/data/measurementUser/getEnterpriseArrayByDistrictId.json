@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pingyin": "qingxuanze"
+    },
+    {
+        "id": 1,
+        "name": "生产企业一",
+        "pingyin": "yi"
+    },
+    {
+        "id": 2,
+        "name": "生产企业二",
+        "pingyin": "er"
+    },
+    {
+        "id": 3,
+        "name": "生产企业三",
+        "pingyin": "san"
+    },
+    {
+        "id": 4,
+        "name": "生产企业四",
+        "pingyin": "si"
+    }
+]

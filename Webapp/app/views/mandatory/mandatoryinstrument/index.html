@@ -1,0 +1,65 @@
+<div class="row">
+    <form class="form-horizontal ng-pristine ng-valid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">器具状态:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-status ng-model="status"></yunzhi-status>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">学科类别:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-discipline ng-model="discipline"></yunzhi-discipline>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">一级学科类别:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-instrument-type-first-level
+                            data-discipline="discipline"
+                            ng-model="data.instrumentFirstLevelType"></yunzhi-instrument-type-first-level>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">二级学科类别:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-instrument-type data-instrument-first-level-type="data.instrumentFirstLevelType"
+                                                ng-model="data.instrumentType"
+                                                data-config="{type:MandatoryInstrumentType}"></yunzhi-instrument-type>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">出场编号:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-license data-manufacturer="manufacturer" ng-model="license"></yunzhi-license>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <button class="btn btn-info">
+                    <i class="fa fa-search"></i>
+                    &nbsp;
+                    查询
+                </button>
+            </div>
+        </div>
+    </form>
+    <div ng-include="'views/mandatory/integrated/index.html'"></div>
+</div>
+

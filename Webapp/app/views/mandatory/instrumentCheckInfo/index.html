@@ -1,0 +1,226 @@
+<form class="form-horizontal" ng-submit="submit()">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">型号：</label>
+                <div class="col-sm-8">
+                    <select class="form-control" ng-disabled="disabled">
+                        <option>请选择</option>
+                        <option>SZP1-1U</option>
+                        <option>SZF10-1</option>
+                        <select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">名称：</label>
+                <div class="col-sm-8">
+                    <select class="form-control" ng-disabled="disabled">
+                        <option>请选择</option>
+                        <option>感应耦合传输式CTD测量仪</option>
+                        <option>水下滑翔器载CTD剖面仪</option>
+                        <select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">编号：</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i>&nbsp;&nbsp;查询
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-xs-2 col-xs-offset-10">
+        <a ui-sref="mandatory.instrumentCheckInfoAdd">
+            <button class="btn btn-info btn-sm" type="submit"><i class="fa fa-plus"></i>&nbsp;新增</button>
+        </a>
+    </div>
+</div>
+<!--<button ng-click="console.log(data.content)">点加</button>-->
+<table cellpadding="1" cellspacing="1" class="table table-bordered table-striped"
+       style="table-layout: fixed; width: 100%">
+    <thead>
+    <tr>
+    <tr>
+        <th width="2%">型号</th>
+        <th width="2%">名称</th>
+        <th width="2%">编号</th>
+        <th width="2%">校准参数</th>
+        <th width="2%">校准次数</th>
+        <th width="3%">首次校准时间</th>
+        <th width="3%">最近校准时间</th>
+        <!--下次校准时间 = 最近校准时间 + 一年-->
+        <!-- 一般情况下加一年，但是也有可能更改，建议写在配置文件中 -->
+        <th width="3%">下次校准时间</th>
+        <th width="2%">用户名称</th>
+        <th width="2%">时间轴</th>
+    </tr>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="word-wrap: break-word;">SZP1-1U</td>
+        <td>感应耦合传输式CTD测量仪</td>
+        <td>Y38-193</td>
+        <td>
+            <table class="table" style="background-color: transparent;">
+                <thead>
+                <tr>
+                    <td>温度</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>压力</td>
+                </tr>
+                <tr>
+                    <td>电导率</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td style="word-wrap: break-word;">
+            <table class="table" style="background-color: transparent;">
+                <thead>
+                <tr>
+                    <td>2</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td style="word-wrap: break-word;">
+            <table class="table" style="background-color: transparent;">
+                <thead>
+                <tr>
+                    <td>2015-04-24</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>2014-04-24</td>
+                </tr>
+                <tr>
+                    <td>2014-04-24</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td style="word-wrap: break-word;">
+
+            <table class="table" style="background-color: transparent;">
+                <thead>
+                <tr>
+                    <td>2017-02-10</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>2017-02-18</td>
+                </tr>
+                <tr>
+                    <td>2017-02-18</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td style="word-wrap: break-word;">
+            <table class="table" style="background-color: transparent;">
+                <thead>
+                <tr>
+                    <td>2018-02-10</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>2018-02-18</td>
+                </tr>
+                <tr>
+                    <td>2018-02-18</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td style="word-wrap: break-word;">
+            <table class="table" style="background-color: transparent;">
+                <thead>
+                <tr>
+                    <td>张三</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>李四</td>
+                </tr>
+                <tr>
+                    <td>王五</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+        <td style="word-wrap: break-word;">
+
+            <table class="table" style="background-color: transparent;">
+                <thead>
+                <tr>
+                    <td>
+                        <button class="btn btn-xs btn-outline btn-info"><i
+                            class="pe-7s-look"></i>&nbsp;查看
+                        </button>
+                    </td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <button class="btn btn-xs btn-outline btn-info"><i
+                            class="pe-7s-look"></i>&nbsp;查看
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-xs btn-outline btn-info"><i
+                            class="pe-7s-look"></i>&nbsp;查看
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<style type="text/css">
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 0;
+    line-height: 1.428571429;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
+</style>

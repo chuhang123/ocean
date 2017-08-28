@@ -1,0 +1,164 @@
+<div class="row">
+    <ng-form class="form-horizontal" ng-show="showStep('first')">
+        <div class="form-group">
+            <label class="col-sm-4 control-label">送审部门</label>
+            <div class="col-sm-8">
+                <!--审核开始-->
+                <yunzhi-audit-start ng-model="data.currentWorkflowNode"></yunzhi-audit-start>
+                <!--能过当前工作流结点选下一工作流结点-->
+                <yunzhi-next-workflow-node data-workflow-node="data.currentWorkflowNode" ng-model="data.nextWorkflowNode"></yunzhi-next-workflow-node>
+                <!--通过工作流结点，显示符合工作流的审核部门-->
+                <yunzhi-audit-department ng-model="data.auditDepartment" data-workflow-node="data.nextWorkflowNode"></yunzhi-audit-department>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">联系人</label>
+            <div class="col-sm-8">
+                <input ng-model="data.apply.contactName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">联系电话</label>
+            <div class="col-sm-8">
+                <input ng-model="data.apply.contactNumber">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">申请意见</label>
+            <div class="col-sm-8">
+                <textarea ng-model="data.work.opinion"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-4">
+                <button class="btn btn-success" ng-click="saveAndClose()" type="button"><i class="fa fa-save"></i>&nbsp;<span class="bold">保存</span></button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-success" ng-click="submit()" type="button"><i class="fa fa-check"></i>&nbsp;<span class="bold">提交</span></button>
+            </div>
+
+        </div>
+    </ng-form>
+    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>学科类别</th>
+            <th>一级类别</th>
+            <th>二级类别</th>
+            <th>器具名称</th>
+            <th>出厂名称</th>
+            <th>型号规格</th>
+            <th>用途</th>
+            <th>测量范围</th>
+            <th>适用测试范围</th>
+            <th>精确度等级</th>
+            <th>适用精确度等级</th>
+            <th>制造单位</th>
+            <th>出厂编号</th>
+            <th>安装地点</th>
+            <th>许可证号</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in datas">
+            <td>{{$index+1}}</td>
+            <td>{{data.region}}</td>
+            <td>{{data.county}}</td>
+            <td>{{data.user}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.status}}</td>
+            <td>{{data.type}}</td>
+            <td>{{data.purpose}}</td>
+            <td>{{data.measureScale}}</td>
+            <td>{{data.rank}}</td>
+            <td>{{data.manufactureUnit}}</td>
+            <td>{{data.factoryNum}}</td>
+            <td>{{data.fixSite}}</td>
+            <td>{{data.licenseNum}}</td>
+            <td>
+                <button class="btn btn-xs btn-info" ng-click="edit(data)"><i class="fa fa-paste"></i>&nbsp;编辑</button>&nbsp;&nbsp;
+                <button class="btn btn-xs btn-danger" ng-click="delete(data)"><i class="fa fa-trash-o"></i>&nbsp;删除</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="col-lg-6">
+        <ng-form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">器具名称</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.mandatoryInstrument.name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">学科类别</label>
+                <div class="col-sm-8">
+                    <yunzhi-discipline ng-model="data.mandatoryInstrument.instrumentProduction.instrumentType.discipline"></yunzhi-discipline>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">器具类别</label>
+                <div class="col-sm-8">
+                    <yunzhi-instrument-type data-discipline="data.mandatoryInstrument.instrumentProduction.instrumentType.discipline" ng-model="data.mandatoryInstrument.instrumentProduction.instrumentType"></yunzhi-instrument-type>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">型号规格</label>
+                <div class="col-sm-8">
+                    <label ng-repeat="specification in data.mandatoryInstrument.instrumentProduction.instrumentType.specifications">
+                        <input type="radio" ng-model="data.mandatoryInstrument.instrumentProduction.specification" ng-value="specification"> &nbsp;&nbsp;{{specification.value}}&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">用途</label>
+                <div class="col-sm-8">
+                    <label ng-repeat="purpose in data.mandatoryInstrument.instrumentProduction.instrumentType.purposes">
+                        <input type="radio" ng-model="data.mandatoryInstrument.purpose" ng-value="purpose"> &nbsp;&nbsp;{{purpose.name}}&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">测量范围</label>
+                <div class="col-sm-8">
+                    <label ng-repeat="measureScale in data.mandatoryInstrument.instrumentProduction.instrumentType.measureScales">
+                        <input type="radio" ng-model="data.mandatoryInstrument.instrumentProduction.measureScale" ng-value="measureScale"> &nbsp;&nbsp;{{measureScale.value}}&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">准确度等级</label>
+                <div class="col-sm-8">
+                    <label ng-repeat="accuracy in data.mandatoryInstrument.instrumentProduction.instrumentType.accuracies">
+                        <input type="radio" ng-model="data.mandatoryInstrument.instrumentProduction.accuracy" ng-value="accuracy"> &nbsp;&nbsp;{{accuracy.value}}&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">制造单位</label>
+                <div class="col-sm-8">
+                    <yunzhi-manufacturer ng-model="data.mandatoryInstrument.instrumentProduction.manufacturerDepartment"></yunzhi-manufacturer>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">许可证号</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.mandatoryInstrument.instrumentProduction.licenseNum">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">出厂编号</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.mandatoryInstrument.factoryNum">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">安装地点</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.mandatoryInstrument.fixSite">
+                </div>
+            </div>
+
+        </ng-form>
+    </div>
+</div>

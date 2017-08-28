@@ -1,0 +1,10 @@
+<!--制造单位-->
+<ui-select ng-model="manufacture.selected" theme="bootstrap" ng-change="update(manufacture.selected)" ng-disabled="disabled">
+    <ui-select-match placeholder="请输入">{{$select.selected.name}}</ui-select-match>
+    <ui-select-choices
+            repeat="manufacture in manufacturers | propsFilter: {name: $select.search}"
+            refresh="refresh($select.search)"
+            refresh-delay="500">
+        <div ng-bind-html="manufacture.name | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>

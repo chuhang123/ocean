@@ -1,0 +1,80 @@
+<div class="content" animate-panel ng-controller="AnalyticsCtrl">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="hpanel">
+                <div class="panel-body text-center h-200">
+                    <i class="pe-7s-graph1 fa-4x"></i>
+                    <h1 class="m-xs">1 206</h1>
+                    <h3 class="font-extra-bold no-margins text-success">
+                        器具总数
+                    </h3>
+                    <small>系统内所有器具总数（不含报废器具）</small>
+                </div>
+                <div class="panel-footer">
+                    更新时间:2017年5月18日
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="hpanel stats">
+                <div class="panel-body h-200">
+                    <div class="stats-title pull-left">
+                        <h4>检定数据</h4>
+                    </div>
+                    <div class="stats-icon pull-right">
+                        <i class="pe-7s-monitor fa-4x"></i>
+                    </div>
+                    <div class="m-t-xl">
+                        <h1 class="text-success">860,032</h1>
+                        <small>一次性检定合格：<strong>850,012</strong></small>
+                        <br/>
+                        <small>一次性检定不合格：<strong>542</strong></small>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    统计周期：2017年度
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="hpanel">
+                <div class="panel-body text-center h-200">
+                    <i class="pe-7s-graph2 fa-4x"></i>
+                    <h1 class="m-xs">443</h1>
+                    <small>周新增检定记录</small>
+                </div>
+                <div class="panel-footer">
+                    统计周期：本周
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="hpanel stats">
+                <div class="panel-body h-300">
+                    <div id="{{yearQualifiedRateId}}">
+
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    一次性合格率 = 一次性检定合格数 / 检定总数
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="hpanel stats">
+                <div class="panel-body h-300">
+                    <div id="{{yearMeasurementQualifiedRateId}}">
+
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    一次性合格率 = 一次性检定合格数 / 检定总数
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

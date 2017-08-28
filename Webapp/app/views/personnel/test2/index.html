@@ -1,0 +1,42 @@
+<div class="content">
+    <form class="form-horizontal ng-pristine ng-valid" ng-submit="submit()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">部件类型:</label>
+                    <div class="col-sm-8">
+                        <select class="form-control">
+                            <option>测量</option>
+                            <option>结构</option>
+                            <option>电路</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-xs-2 col-xs-offset-10">
+                    <a ui-sref="last.test2Add"><button class="btn btn-info btn-sm" type="button"><i class="fa fa-plus"></i>&nbsp;新增</button></a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <yunzhi-page data-total-pages="data.totalPages" data-total-elements="data.totalElements" data-first="data.first" data-last="data.last" data-number="data.number" data-size="data.size" data-number-of-elements="data.numberOfElements"></yunzhi-page>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

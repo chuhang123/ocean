@@ -1,0 +1,39 @@
+<div class="row" ng-controller="RoleRolefileIndexCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer"
+                     id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                        </div>
+
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>角色名称</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="data in datas">
+                            <td style="word-wrap: break-word">{{$index+1}}</td>
+                            <td style="word-wrap: break-word">{{data.name}}</td>
+                            <td style="word-wrap: break-word">
+                                <a class="btn btn-xs btn-info" ui-sref="system.RolefileEdit({data: data})"><i class="fa fa-paste"></i>&nbsp;编辑
+                                </a>&nbsp;&nbsp;
+                                <button class="btn btn-xs btn-danger" ng-click="delete(data)"><i
+                                        class="fa fa-trash-o"></i>&nbsp;删除
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

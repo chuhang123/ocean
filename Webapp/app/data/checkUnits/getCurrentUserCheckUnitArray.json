@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pingyin": "qingxuanze" 
+    },
+    {
+        "id": 1,
+        "name": "河北省能源计量中心",
+        "pingyin": "hebeishengnengyuanjiliangzhongxin"
+    },
+    {
+        "id": 2,
+        "name": "河北省计量校准检测中心",
+        "pingyin": "hebeishengjiliangjiaozhunjiancezhongxin"
+    },
+    {
+        "id": 3,
+        "name": "河北省水表计量检定中心",
+        "pingyin": "hebeishengshuibiaojiliangjiandingzhongxin"
+    },
+    {
+        "id": 4,
+        "name": "河北省计量检测工程技术研究中心",
+        "pingyin": "hebeishengjiliangjiancegongchengjishuyanjiuzhongzin"
+    }
+]

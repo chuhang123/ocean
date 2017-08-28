@@ -1,0 +1,77 @@
+<div class="row" ng-controller="MandatoryNumbercategoriesIndexCtrl">
+    <form class="form-horizontal ng-pristine ng-valid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">区域:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-district ng-model="district"></yunzhi-district>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">器具用户:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-measurement-user data-district="district" ng-model="measureUser"></yunzhi-measurement-user>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <button class="btn-primary btn" ng-click="submit()">查询</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hr-line-dashed"></div>
+    </form>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th colspan="2"></th>
+                                <th>贸易结算</th>
+                                <th>安全防护</th>
+                                <th>医疗卫生</th>
+                                <th>环境监测</th>
+                                <th>行政执法</th>
+                                <th>司法鉴定</th>
+                                <th>小计</th>
+                                <th>合计</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in datas">
+                                <td>{{data.name}}</td>
+                                <td>{{data.status}}</td>
+                                <td>{{data.tradeSettlement}}</td>
+                                <td>{{data.safetyProtection}}</td>
+                                <td>{{data.healthCare}}</td>
+                                <td>{{data.environmentalMonitoring}}</td>
+                                <td>{{data.administrativeEnforcementOfLaw}}</td>
+                                <td>{{data.expertTestimony}}</td>
+                                <td>{{data.subtotal}}</td>
+                                <td>{{data.total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

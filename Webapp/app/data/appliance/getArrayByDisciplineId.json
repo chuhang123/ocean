@@ -1,0 +1,23 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pinyin": "qingxuanze"
+    },
+    {
+        "id": 1,
+        "name": "直尺",
+        "pinyin": "zhichi"
+    },
+    {
+        "id": 2,
+        "name": "量角器",
+        "pinyin": "liangjiaoqi"
+    },
+    {
+        "id": 3,
+        "name": "圆规",
+        "pinyin": "yuangui"
+    }
+]
+

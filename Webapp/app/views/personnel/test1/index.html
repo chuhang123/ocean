@@ -1,0 +1,99 @@
+<div class="content">
+    <form class="form-horizontal ng-pristine ng-valid" ng-submit="submit()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">输入类型:</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" ng-init="selectedName = names[0]" ng-model="selectedName" ng-options="x for x in names">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-xs-2 col-xs-offset-10">
+                    <a ui-sref="last.test1Add"><button class="btn btn-info btn-sm" type="button"><i class="fa fa-plus"></i>&nbsp;新增</button></a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <div ng-show="selectedName == '测量仪器'">
+                        <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>型号</th>
+                                <th>名称</th>
+                                <th>输入类型</th>
+                                <th>测量参数</th>
+                                <th>存储模式</th>
+                                <th>存储介质</th>
+                                <th>备注</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Y32-2323</td>
+                                <td>名称一</td>
+                                <td>测量仪器</td>
+                                <td>温度 电导率</td>
+                                <td>直读</td>
+                                <td>内置flash</td>
+                                <td>这是一个备注</td>
+                                <td>
+                                    <a ui-sref="last.test1Add" class="btn btn-xs btn-info"> <i class="fa fa-paste"></i>&nbsp;
+                                        编辑&nbsp;</a>
+                                    <a ng-click="delete($index, object)" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i>&nbsp;
+                                        删除&nbsp;</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div ng-show="selectedName == '非测量仪器'">
+                        <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>型号</th>
+                                <th>名称</th>
+                                <th>输入类型</th>
+                                <th>特性描述</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Y32-2323</td>
+                                <td>名称一</td>
+                                <td>测量仪器</td>
+                                <td>这是一个特性描述</td>
+                                <td>
+                                    <a ui-sref="last.test1Add" class="btn btn-xs btn-info"> <i class="fa fa-paste"></i>&nbsp;
+                                        编辑&nbsp;</a>
+                                    <a ng-click="delete($index, object)" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i>&nbsp;
+                                        删除&nbsp;</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <yunzhi-page data-total-pages="data.totalPages" data-total-elements="data.totalElements" data-first="data.first" data-last="data.last" data-number="data.number" data-size="data.size" data-number-of-elements="data.numberOfElements"></yunzhi-page>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

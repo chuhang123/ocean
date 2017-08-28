@@ -1,0 +1,221 @@
+<div class="row">
+    <div class="col-md-6">
+        <form ng-if="showApplyForm()" class="form-horizontal" name="applyForm" ng-submit="updateApply()">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">申请类型</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">强制检定器具备案申请</p>
+                </div>
+            </div>
+            <!--审核开始-->
+            <yunzhi-audit-choose
+                    data-work="data.work"
+                    data-audit-type="data.auditType"
+                    ng-model="data.nextWork"></yunzhi-audit-choose>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">联系人</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.work.apply.contactName" name="contactName"
+                           required>
+                    <div class="m-t-xs" ng-show="applyForm.contactName.$invalid && applyForm.contactName.$touched">
+                        <span class="text-danger" ng-show="applyForm.contactName.$error "><i
+                                class="fa fa-exclamation-triangle"></i> 请输入联系人</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">联系电话</label>
+                <div class="col-sm-8">
+                    <input type="tel" class="form-control" ng-model="data.work.apply.contactNumber" required
+                           name="contactNumber" required>
+                    <div class="m-t-xs" ng-show="applyForm.contactNumber.$invalid && applyForm.contactNumber.$touched">
+                        <span class="text-danger" ng-show="applyForm.contactNumber.$error "><i
+                                class="fa fa-exclamation-triangle"></i> 请输入联系电话</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <button ng-show="!applyForm.$submitted" class="btn btn-success" type="submit"><i
+                            class="fa fa-save"></i>&nbsp;<span
+                            class="bold">&nbsp;确定</span></button>
+                    <button ng-disabled="true" ng-show="applyForm.$submitted" class="btn btn-success" type="button"><i
+                            class="fa fa-save"></i>&nbsp;<span
+                            class="bold">&nbsp;正在处理数据...</span></button>
+                </div>
+            </div>
+        </form>
+
+        <form ng-if="!showApplyForm()" ng-submit="updateApply()" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">待在办人</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">{{data.work.apply.auditingDepartment.name}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">提交部门</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">{{data.work.preWork.auditDepartment.name}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">提交时间</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">{{data.work.createTime | date : 'yyyy-MM-dd HH:mm:ss'}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">申请部门</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">{{data.work.apply.department.name}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">联系人</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">{{data.work.apply.contactName}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">联系电话</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">{{data.work.apply.contactNumber}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">流程状态</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">{{data.work | workAuditStatus}}</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-4 control-label">历史审核意见</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">
+                        <yunzhi-history-opinion-of-work ng-model="data.work"></yunzhi-history-opinion-of-work>
+                    </p>
+                </div>
+            </div>
+            <!--审核开始-->
+            <yunzhi-audit-choose
+                    data-work="data.work"
+                    data-audit-type="data.auditType"
+                    ng-model="data.nextWork"></yunzhi-audit-choose>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <!-- <button ng-show="data.work.done" ng-click="back()" class="btn btn-primary2" type="button"><i
+                            class="fa fa-history"></i>&nbsp;<span
+                            class="bold">&nbsp;返回</span></button> -->
+                    <button ng-disabled="saveWorkDisabled()" ng-show="!data.work.done" class="btn btn-primary"
+                            type="submit"><i
+                            class="fa fa-save"></i>&nbsp;<span
+                            class="bold">&nbsp;确定</span></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-sm-4">
+        <button ng-show="showCrud" class="btn btn-info btn-sm" ng-click="goToStep1()"><i class="fa fa-plus"></i>&nbsp;增加器具
+        </button>
+        <h3 ng-show="showAutoMatch()">
+            <button type="button" class="btn btn-sm btn-primary" ng-show="showAutoMatch()"
+                    ng-click="assignToTechnicalInstitution()"><i class="fa fa-hand-o-down"></i>&nbsp;指定技术机构&nbsp;<i
+                    class="fa fa-hand-o-right"></i>
+            </button>
+            {{technicalInstitution.name}}
+        </h3>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4 text-right">
+        <button class="btn btn-primary2 btn-sm" type="button" ng-click="downloadWord()" ng-show="showDownloadWord"><i
+                class="fa fa-file-word-o"></i>&nbsp;&nbsp;生成备案申请
+        </button>
+        <button class="btn btn-primary2 btn-sm" ng-disabled="true" type="button" ng-hide="showDownloadWord">正在生成文档...
+        </button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped" style="table-layout: fixed; width: 100%">
+            <thead>
+            <tr>
+                <th width="4%">
+                    指定机构
+                </th>
+                <th width="2%">学科类别</th>
+                <th width="2%">一级类别</th>
+                <th width="2%">二级类别</th>
+                <th width="2%">器具名称</th>
+                <th width="2%">出厂名称</th>
+                <th width="2%">型号规格</th>
+                <th width="2%">用途</th>
+                <th width="2%">测量范围</th>
+                <th width="2%">适用测试范围</th>
+                <th width="2%">精确度等级</th>
+                <th width="2%">适用精确度等级</th>
+                <th width="2%">制造单位</th>
+                <th width="2%">出厂编号</th>
+                <th width="2%">安装地点</th>
+                <th width="2%">许可证号</th>
+                <th width="2%">状态</th>
+                <th width="3%">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="object in data.work.apply.mandatoryInstruments | filter:statusFilter()">
+                <td style="word-wrap: break-word;">
+                    <div class="checkbox checkbox-success" ng-show="object.checkAbility && !object.audit">
+                        <input id="checkbox{{object.id}}" type="checkbox"
+                               ng-model="object.assgin">
+                        <label for="checkbox{{object.id}}">{{technicalInstitution.name}}</label>
+                    </div>
+                    <p ng-show="!object.checkAbility || object.audit">
+                        {{object.checkDepartment.name}}
+                    </p>
+                </td>
+                <td style="word-wrap: break-word;">
+                    {{object.instrumentType.instrumentFirstLevelType.discipline.name}}
+                </td>
+                <td style="word-wrap: break-word;">{{object.instrumentType.instrumentFirstLevelType.name}}</td>
+                <td style="word-wrap: break-word;">{{object.instrumentType.name}}</td>
+                <td style="word-wrap: break-word;">{{object.name}}</td>
+                <td style="word-wrap: break-word;">{{object.outOfFactoryName}}</td>
+                <td style="word-wrap: break-word;">{{object.specificationName}}</td>
+                <td style="word-wrap: break-word;">{{object.purpose.name}}</td>
+                <td style="word-wrap: break-word;">{{object.measureScaleName}}</td>
+                <td style="word-wrap: break-word;">{{object.measureScale.value}}</td>
+                <td style="word-wrap: break-word;">{{object.accuracyName}}</td>
+                <td style="word-wrap: break-word;">{{object.accuracy.value}}</td>
+                <td style="word-wrap: break-word;">{{object.generativeDepartment.name}}</td>
+                <td style="word-wrap: break-word;">{{object.serialNum}}</td>
+                <td style="word-wrap: break-word;">{{object.fixSite}}</td>
+                <td style="word-wrap: break-word;">{{object.licenseNum}}</td>
+                <td style="word-wrap: break-word;" ng-bind-html="object.status | MandatoryInstrumentStatus"></td>
+                <td>
+                    <button ng-show="showCrud" class="btn btn-xs btn-info" ng-click="edit(object)"><i
+                            class="fa fa-paste"></i>&nbsp;编辑
+                    </button>&nbsp;&nbsp;
+                    <button ng-show="showDelete(object)" class="btn btn-xs btn-danger" ng-click="delete(object)"><i
+                            class="fa fa-trash-o"></i>&nbsp;删除
+                    </button>
+                    <button class="btn btn-xs btn-outline btn-primary2" ng-show="showBack(object)"
+                            ng-click="back(object)" type="button"><i class="fa fa-eye-slash"></i>&nbsp;退回
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

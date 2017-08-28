@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pingyin": "qingxuanze" 
+    },
+    {
+        "id": 1,
+        "name": "B级合格",
+        "pingyin": "Bjihege"
+    },
+    {
+        "id": 2,
+        "name": "合格",
+        "pingyin": "hege"
+    },
+    {
+        "id": 3,
+        "name": "符合0.4级",
+        "pingyin": "fuhe0.4ji"
+    },
+    {
+        "id": 4,
+        "name": "准予作M等级使用",
+        "pingyin": "zhunyuzuoMdengjishiyong"
+    },
+    {
+        "id": 5,
+        "name": "2级合格",
+        "pingyin": "2jihege"
+    },
+    {
+        "id": 6,
+        "name": "符合2.5级",
+        "pingyin": "fuhe2.5ji"
+    }
+]

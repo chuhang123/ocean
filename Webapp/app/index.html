@@ -1,0 +1,510 @@
+<!doctype html>
+<html ng-app="webappApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>计量器具管理平台</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="bower_components/sweetalert/lib/sweet-alert.css" />
+    <link rel="stylesheet" href="bower_components/angular-notify/dist/angular-notify.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/fullcalendar.css" />
+    <link rel="stylesheet" href="bower_components/summernote/dist/summernote.css" />
+    <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.min.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-tour/build/css/bootstrap-tour.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-tour/build/css/bootstrap-tour-standalone.css" />
+    <link rel="stylesheet" href="bower_components/angular-datatables/dist/css/angular-datatables.css" />
+    <link rel="stylesheet" href="bower_components/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+    <link rel="stylesheet" href="bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+    <link rel="stylesheet" href="bower_components/blueimp-gallery/css/blueimp-gallery.css" />
+    <link rel="stylesheet" href="bower_components/blueimp-gallery/css/blueimp-gallery-indicator.css" />
+    <link rel="stylesheet" href="bower_components/blueimp-gallery/css/blueimp-gallery-video.css" />
+    <link rel="stylesheet" href="bower_components/footable/css/footable.core.css" />
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css" />
+    <link rel="stylesheet" href="bower_components/CodeMirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="bower_components/ladda/dist/ladda.min.css" />
+    <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/c3/c3.css" />
+    <link rel="stylesheet" href="bower_components/clockpicker/dist/jquery-clockpicker.css" />
+    <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-tree-control/css/tree-control.css" />
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- <script src="styles/theme/default/script/jquery-1.11.1.min.js" type="text/javascript"></script> -->
+    <!-- <link rel="stylesheet" href="styles/css/mandatory/passrate.css"> -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/font-awesome.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/easy-ui/icon.css" />
+    <link rel="stylesheet" href="styles/easy-ui/easyui.css" />
+    <link rel="stylesheet" href="styles/easy-ui/demo.css" />
+    <link rel="stylesheet" href="styles/css/pe-icon-7-stroke.css" />
+    <link rel="stylesheet" href="styles/css/helper.css" />
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- endbuild -->
+
+    <style type="text/css">
+    .loading {
+        display: table;
+        width: 100%;
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    .bg50cf77 {
+        background-color: #50cf77;
+    }
+
+    .loading .table-cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .loading .table-cell h1 {
+        color: #ffffff;
+        margin-top: 2em;
+    }
+
+    #loading-yz-bar {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+    }
+
+    #loading-yz-bar .loading-main {
+        width: 256px;
+        height: 100px;
+        background-color: #0a0a0a;
+        margin: 0 auto;
+        opacity: 0.5;
+    }
+
+    #loading-yz-bar .loading-main p {
+        color: white;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<!-- Body -->
+<!-- appCtrl controller with serveral data used in theme on diferent view -->
+<!-- landing-scrollspy is directive for scrollspy used in landing page -->
+
+<body ng-controller="appCtrl" class="sidebar-scroll fixed-navbar {{$state.current.data.specialClass}}" landing-scrollspy tour backdrop="true">
+
+    <!--[if lt IE 7]>
+    <p class="alert alert-danger">对不起，您使用的浏览器版本 <strong>过低</strong>。请升级您的IE浏览器。或下载<a href="http://www.firefox.com.cn/">火狐</a>浏览器</p>
+    <![endif]-->
+
+    <!-- Page view wrapper -->
+    <div ui-view autoscroll="true">
+        <div class="loading bg50cf77">
+            <div class="table-cell">
+                <img src="styles/svg/loading-bars.svg" width="256" height="64">
+                <h1>正在加载, 请稍候...</h1>
+            </div>
+        </div>
+    </div>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
+    <script src="bower_components/jquery-flot/jquery.flot.js"></script>
+    <script src="bower_components/angular-flot/angular-flot.js"></script>
+    <script src="bower_components/flot/jquery.flot.js"></script>
+    <script src="bower_components/flot.curvedlines/curvedLines.js"></script>
+    <script src="bower_components/iCheck/icheck.min.js"></script>
+    <script src="bower_components/jquery.flot.spline/index.js"></script>
+    <script src="bower_components/sparkline/index.js"></script>
+    <script src="bower_components/peity/jquery.peity.js"></script>
+    <script src="bower_components/angular-peity/angular-peity.js"></script>
+    <script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
+    <script src="bower_components/angular-notify/dist/angular-notify.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="bower_components/angular-ui-map/ui-map.js"></script>
+    <script src="bower_components/fullcalendar/fullcalendar.js"></script>
+    <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script src="bower_components/summernote/dist/summernote.js"></script>
+    <script src="bower_components/angular-summernote/dist/angular-summernote.js"></script>
+    <script src="bower_components/ng-grid/build/ng-grid.js"></script>
+    <script src="bower_components/slimScroll/jquery.slimscroll.js"></script>
+    <script src="bower_components/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+    <script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.js"></script>
+    <script src="bower_components/bootstrap-tour/build/js/bootstrap-tour-standalone.js"></script>
+    <script src="bower_components/angular-bootstrap-tour/dist/angular-bootstrap-tour.js"></script>
+    <script src="bower_components/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="bower_components/angular-datatables/dist/angular-datatables.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/light-columnfilter/angular-datatables.light-columnfilter.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/buttons/angular-datatables.buttons.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/select/angular-datatables.select.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/blueimp-gallery/js/blueimp-helper.js"></script>
+    <script src="bower_components/blueimp-gallery/js/blueimp-gallery.js"></script>
+    <script src="bower_components/blueimp-gallery/js/blueimp-gallery-fullscreen.js"></script>
+    <script src="bower_components/blueimp-gallery/js/blueimp-gallery-indicator.js"></script>
+    <script src="bower_components/blueimp-gallery/js/blueimp-gallery-video.js"></script>
+    <script src="bower_components/blueimp-gallery/js/blueimp-gallery-vimeo.js"></script>
+    <script src="bower_components/blueimp-gallery/js/blueimp-gallery-youtube.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/footable/js/footable.js"></script>
+    <script src="bower_components/angular-footable/dist/angular-footable.js"></script>
+    <script src="bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="bower_components/angular-chartist.js/dist/angular-chartist.js"></script>
+    <script src="bower_components/CodeMirror/lib/codemirror.js"></script>
+    <script src="bower_components/codemirror/lib/codemirror.js"></script>
+    <script src="bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
+    <script src="bower_components/spin.js/spin.js"></script>
+    <script src="bower_components/ladda/dist/ladda.min.js"></script>
+    <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.js"></script>
+    <script src="bower_components/datatables.net-buttons/js/dataTables.buttons.js"></script>
+    <script src="bower_components/datatables.net-buttons/js/buttons.colVis.js"></script>
+    <script src="bower_components/datatables.net-buttons/js/buttons.flash.js"></script>
+    <script src="bower_components/datatables.net-buttons/js/buttons.html5.js"></script>
+    <script src="bower_components/datatables.net-buttons/js/buttons.print.js"></script>
+    <script src="bower_components/datatables.net-buttons-bs/js/buttons.bootstrap.js"></script>
+    <script src="bower_components/pdfmake/build/pdfmake.js"></script>
+    <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/c3/c3.js"></script>
+    <script src="bower_components/clockpicker/dist/jquery-clockpicker.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="bower_components/c3-angular/c3-angular.min.js"></script>
+    <script src="bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-tree-control/angular-tree-control.js"></script>
+    <script src="bower_components/jquery-easyui/jquery.easyui.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/angular-i18n/angular-locale_zh-cn.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/webappApp.js"></script>
+    <script src="scripts/echarts.min.js"></script>
+    <script src="scripts/services/yearServer.js"></script>
+    <script src="scripts/services/regiontreeService.js"></script>
+    <script src="scripts/services/strongcheckdataServer.js"></script>
+    <script src="scripts/controllers/main.js "></script>
+    <script src="scripts/controllers/about.js "></script>
+    <script src="scripts/controllers/mandatory/numbercategories/indexController.js "></script>
+    <script src="scripts/controllers/mandatory/qualified/indexController.js "></script>
+    <script src="scripts/controllers/mandatory/passrate/indexController.js "></script>
+    <script src="scripts/controllers/optional/numbersubjects/indexController.js "></script>
+    <script src="scripts/controllers/optional/integrated/indexController.js "></script>
+    <script src="scripts/controllers/standard/file/indexController.js "></script>
+    <script src="scripts/controllers/standard/authorization/indexController.js "></script>
+    <script src="scripts/controllers/measuringdevice/integrated/indexController.js "></script>
+    <script src="scripts/controllers/measuringdevice/appliancearchives/indexController.js "></script>
+    <script src="scripts/controllers/measuringdevice/enterprisefile/indexController.js "></script>
+    <script src="scripts/controllers/personnel/personnelfile/indexController.js "></script>
+    <script src="scripts/controllers/register/measuredevice/indexController.js "></script>
+    <script src="scripts/controllers/register/technology/indexController.js "></script>
+    <script src="scripts/controllers/register/enterprise/indexController.js "></script>
+    <script src="scripts/controllers/business/measurement/indexController.js "></script>
+    <script src="scripts/controllers/business/technology/indexController.js "></script>
+    <script src="scripts/controllers/business/measuretool/indexController.js "></script>
+    <script src="scripts/controllers/system/permission/indexController.js "></script>
+    <script src="scripts/controllers/system/loginmanage/indexController.js "></script>
+    <script src="scripts/controllers/mandatory/integrated/indexController.js "></script>
+    <script src="scripts/controllers/mandatory/integrated/editController.js "></script>
+    <script src="scripts/controllers/mywork/unhandle/indexController.js "></script>
+    <script src="scripts/controllers/mywork/handling/indexController.js "></script>
+    <script src="scripts/controllers/mywork/holdon/indexController.js "></script>
+    <script src="scripts/controllers/mywork/handled/indexController.js "></script>
+    <script src="scripts/services/userserver.js"></script>
+    <script src="scripts/services/applianceserver.js"></script>
+    <script src="scripts/services/technicalorstandardserver.js"></script>
+    <script src="scripts/services/teachnicalserver.js"></script>
+    <script src="scripts/controllers/standard/file/indexController.js"></script>
+    <script src="scripts/controllers/productinfo/productlist/indexController.js"></script>
+    <script src="scripts/controllers/standard/authorization/addController.js"></script>
+    <script src="scripts/controllers/standard/file/addController.js"></script>
+    <script src="scripts/controllers/measuringdevice/appliancearchives/addController.js"></script>
+    <script src="scripts/controllers/measuringdevice/enterprisefile/addController.js"></script>
+    <script src="scripts/controllers/register/measuredevice/addController.js"></script>
+    <script src="scripts/controllers/register/technology/addController.js"></script>
+    <script src="scripts/controllers/register/enterprise/addController.js"></script>
+    <script src="scripts/services/configservice.js"></script>
+    <script src="scripts/controllers/business/measurement/addController.js"></script>
+    <script src="scripts/controllers/business/measuretool/addController.js"></script>
+    <script src="scripts/controllers/productinfo/productlist/addController.js"></script>
+    <script src="scripts/controllers/mywork/unhandle/check.js"></script>
+    <script src="scripts/directives/directives.js"></script>
+    <script src="scripts/directives/touchSpin.js"></script>
+    <script src="scripts/factories/sweet-alert.js"></script>
+    <script src="scripts/filters/props.js"></script>
+    <script src="scripts/controllers/charts_flot.js"></script>
+    <script src="scripts/controllers/optional/checkdetail/indexController.js"></script>
+    <script src="scripts/controllers/mandatory/checkdetail/indexController.js"></script>
+    <script src="scripts/controllers/mandatory/instrument/indexController.js"></script>
+    <script src="scripts/directives/yunzhidistrict.js"></script>
+    <script src="scripts/services/districtservice.js"></script>
+    <script src="scripts/directives/yunzhiInstrumentUser.js"></script>
+    <script src="scripts/services/measurementuser.js"></script>
+    <script src="scripts/services/measuringdeviceappliancearchivesservice.js"></script>
+    <script src="scripts/controllers/optional/integrated/addController.js"></script>
+    <script src="scripts/services/optionalintegratedservice.js"></script>
+    <script src="scripts/controllers/mandatory/integrated/addController.js"></script>
+    <script src="scripts/services/mandatoryInstrumentservice.js"></script>
+    <script src="scripts/services/standardauthorizationservice.js"></script>
+    <script src="scripts/services/personnelfileservice.js"></script>
+    <script src="scripts/services/standardfileservice.js"></script>
+    <script src="scripts/controllers/business/technology/addController.js"></script>
+    <script src="scripts/services/technologyservice.js"></script>
+    <script src="scripts/services/measuringdeviceenterprisefileservice.js"></script>
+    <script src="scripts/directives/yunzhiPageSize.js"></script>
+    <script src="scripts/services/purposeservice.js"></script>
+    <script src="scripts/directives/yunzhipurpose.js"></script>
+    <script src="scripts/directives/yunzhimanufacturer.js"></script>
+    <script src="scripts/services/manufacturerservice.js"></script>
+    <script src="scripts/directives/yunzhiexportbtn.js"></script>
+    <script src="scripts/directives/yunzhipage.js"></script>
+    <script src="scripts/directives/yunzhilicense.js"></script>
+    <script src="scripts/services/licenseservice.js"></script>
+    <script src="scripts/services/serialnumberservice.js"></script>
+    <script src="scripts/directives/yunzhiserialnumber.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/services/registermeasuredeviceservice.js"></script>
+    <script src="scripts/directives/yunzhichoice.js"></script>
+    <script src="scripts/services/choiceservice.js"></script>
+    <script src="scripts/controllers/regionmanage/indexController.js"></script>
+    <script src="scripts/services/regionmanageservice.js"></script>
+    <script src="scripts/controllers/regionmanage/addController.js"></script>
+    <script src="scripts/controllers/role/rolefile/indexController.js"></script>
+    <script src="scripts/services/rolerolefileservice.js"></script>
+    <script src="scripts/controllers/role/rolefile/addController.js"></script>
+    <script src="scripts/controllers/role/rolefile/editController.js"></script>
+    <script src="scripts/controllers/role/rolefile/detailController.js"></script>
+    <script src="scripts/services/commonservice.js"></script>
+    <script src="scripts/controllers/user/userfile/indexController.js"></script>
+    <script src="scripts/controllers/user/userfile/addController.js"></script>
+    <script src="scripts/controllers/user/userfile/editController.js"></script>
+    <script src="scripts/controllers/user/userfile/detailController.js"></script>
+    <script src="scripts/controllers/post/postfile/indexController.js"></script>
+    <script src="scripts/controllers/post/postfile/addController.js"></script>
+    <script src="scripts/controllers/post/postfile/detailController.js"></script>
+    <script src="scripts/controllers/post/postfile/editController.js"></script>
+    <script src="scripts/services/postpostfileservice.js"></script>
+    <script src="scripts/controllers/workflowtype/workflowtypemanage/indexcontroller.js"></script>
+    <script src="scripts/services/workflowtypemanageservice.js"></script>
+    <script src="scripts/controllers/workflowtype/workflowtypemanage/addcontroller.js"></script>
+    <script src="scripts/services/measuringrangeservice.js"></script>
+    <script src="scripts/services/accuracyservice.js"></script>
+    <script src="scripts/services/applianceservice.js"></script>
+    <script src="scripts/directives/yunzhistatus.js"></script>
+    <script src="scripts/directives/yunzhimeasuringrange.js"></script>
+    <script src="scripts/directives/yunzhiaccuracy.js"></script>
+    <script src="scripts/directives/yunzhiInstrumentType.js"></script>
+    <script src="scripts/controllers/higheststandard/file/indexController.js"></script>
+    <script src="scripts/controllers/standard/fixedassets/indexController.js"></script>
+    <script src="scripts/controllers/standard/ability/indexController.js"></script>
+    <script src="scripts/controllers/standard/personnelfile/indexController.js"></script>
+    <script src="scripts/controllers/personnel/test1/indexController.js"></script>
+    <script src="scripts/controllers/standard/schedule/indexController.js"></script>
+    <script src="scripts/controllers/standard/technology/indexController.js"></script>
+    <script src="scripts/controllers/mandatory/userapplication/indexController.js"></script>
+    <script src="scripts/controllers/mandatory/reply/indexController.js"></script>
+    <script src="scripts/controllers/optional/userapplication/indexController.js"></script>
+    <script src="scripts/controllers/optional/reply/indexController.js"></script>
+    <script src="scripts/controllers/register/society/indexController.js"></script>
+    <script src="scripts/controllers/register/energycompanies/indexController.js"></script>
+    <script src="scripts/directives/yunzhidiscipline.js"></script>
+    <script src="scripts/directives/yunzhiyear.js"></script>
+    <script src="scripts/directives/yunzhicode.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
+    <script src="scripts/controllers/others/integritylist/indexController.js"></script>
+    <script src="scripts/controllers/others/platform/indexController.js"></script>
+    <script src="scripts/services/registertechnologyservice.js"></script>
+    <script src="scripts/services/registerenterpriseservice.js"></script>
+    <script src="scripts/services/mandatorycheckdetailservice.js"></script>
+    <script src="scripts/services/optionalcheckdetailservice.js"></script>
+    <script src="scripts/controllers/analytics.js"></script>
+    <script src="scripts/services/mandatorynumbercategoriesservice.js"></script>
+    <script src="scripts/controllers/system/menu/indexController.js"></script>
+    <script src="scripts/controllers/system/menu/addController.js"></script>
+    <script src="scripts/services/webAppMenuService.js"></script>
+    <script src="scripts/controllers/personalcenter/personalinfomanage/indexController.js"></script>
+    <script src="scripts/services/personalcenterservice.js"></script>
+    <script src="scripts/directives/yunzhisidenavigation.js"></script>
+    <script src="scripts/services/yearservice.js"></script>
+    <script src="scripts/controllers/technology/dynamic/indexController.js"></script>
+    <script src="scripts/controllers/technology/newregulations/indexController.js"></script>
+    <script src="scripts/controllers/technology/law/indexController.js"></script>
+    <script src="scripts/controllers/technology/information/indexController.js"></script>
+    <script src="scripts/controllers/system/authority/indexController.js"></script>
+    <script src="scripts/controllers/system/login/indexController.js"></script>
+    <script src="scripts/controllers/supervise/organization/indexController.js"></script>
+    <script src="scripts/controllers/supervise/standard/indexController.js"></script>
+    <script src="scripts/controllers/supervise/manufacturing/indexController.js"></script>
+    <script src="scripts/controllers/supervise/suttle/indexController.js"></script>
+    <script src="scripts/controllers/supervise/instrument/indexController.js"></script>
+    <script src="scripts/controllers/supervise/enterpriseinstrument/indexController.js"></script>
+    <script src="scripts/controllers/supervise/department/indexController.js"></script>
+    <script src="scripts/controllers/supervise/measure/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/file/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/integrated/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/measuringdevice/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/secondarydevice/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/maindevice/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/otherdevice/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/summary/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/statisticalsummary/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/accuracy/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/flowgraph/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/map/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/equipment/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/personnel/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/training/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/statistics/indexController.js"></script>
+    <script src="scripts/controllers/energyenterprise/energystatistics/indexController.js"></script>
+    <script src="scripts/services/departmentservice.js"></script>
+    <script src="scripts/services/postservice.js"></script>
+    <script src="scripts/directives/yunzhicheckunit.js"></script>
+    <script src="scripts/services/checkunitservice.js"></script>
+    <script src="scripts/directives/yunzhiindicationdeviation.js"></script>
+    <script src="scripts/services/indicationdeviationservice.js"></script>
+    <script src="scripts/directives/yunzhidate.js"></script>
+    <script src="scripts/directives/yunzhideadline.js"></script>
+    <script src="scripts/services/disciplineservice.js"></script>
+    <script src="scripts/services/departmentdirectiveservice.js"></script>
+    <script src="scripts/directives/yunzhidepartment.js"></script>
+    <script src="scripts/directives/yunzhichoicename.js"></script>
+    <script src="scripts/services/choicenameservice.js"></script>
+    <script src="scripts/directives/yunzhicheckresult.js"></script>
+    <script src="scripts/services/checkresultservice.js"></script>
+    <script src="scripts/directives/yunzhiissueunit.js"></script>
+    <script src="scripts/services/issueunitservice.js"></script>
+    <script src="scripts/directives/yunzhiqualifiercertificate.js"></script>
+    <script src="scripts/services/qualifiercertificateservice.js"></script>
+    <script src="scripts/directives/yunzhipost.js"></script>
+    <script src="scripts/services/codeservice.js"></script>
+    <script src="scripts/directives/yunzhiauthorizitem.js"></script>
+    <script src="scripts/services/authorizitemservice.js"></script>
+    <script src="scripts/controllers/registration.js"></script>
+    <script src="scripts/controllers/check.js"></script>
+    <script src="scripts/directives/yunzhiUserStatus.js"></script>
+    <script src="scripts/directives/yunzhidepartmenttype.js"></script>
+    <script src="scripts/services/departmenttypeservice.js"></script>
+    <script src="scripts/filters/userStatus.js"></script>
+    <script src="scripts/filters/fullnamewithparent.js"></script>
+    <script src="scripts/controllers/system/instrumentType/index.js"></script>
+    <script src="scripts/directives/accuracydisplayname.js"></script>
+    <script src="scripts/controllers/system/instrumentType/add.js"></script>
+    <script src="scripts/services/accuracydisplaynameService.js"></script>
+    <script src="scripts/services/instrumenttypeservice.js"></script>
+    <script src="scripts/directives/yunzhiaccess.js"></script>
+    <script src="scripts/controllers/system/navigation.js"></script>
+    <script src="scripts/directives/yunzhidepartmentinstrumenttype.js"></script>
+    <script src="scripts/services/instrumentproductionservice.js"></script>
+    <script src="scripts/directives/yunzhiauditstart.js"></script>
+    <script src="scripts/services/workflownodeservice.js"></script>
+    <script src="scripts/directives/yunzhiNextworkflownode.js"></script>
+    <script src="scripts/directives/yunzhiauditdepartment.js"></script>
+    <script src="scripts/controllers/MandatoryCalibrateRecord/indexController.js"></script>
+    <script src="scripts/controllers/MandatoryCalibrateRecord/auditController.js"></script>
+    <script src="scripts/services/mandatorycalibraterecordservice.js"></script>
+    <script src="scripts/controllers/standard/file/detailController.js"></script>
+    <script src="scripts/controllers/standard/file/detailaddController.js"></script>
+    <script src="scripts/services/standarddeviceservice.js"></script>
+    <script src="scripts/services/workservice.js"></script>
+    <script src="scripts/filters/workAuditStatus.js"></script>
+    <script src="scripts/directives/yunzhiauditchoose.js"></script>
+    <script src="scripts/filters/workIsDone.js"></script>
+    <script src="scripts/services/standardpersonnelfileservice.js"></script>
+    <script src="scripts/controllers/standard/personnelfile/addController.js"></script>
+    <script src="scripts/filters/workAudit.js"></script>
+    <script src="scripts/services/mandatoryinstrumentworkservice.js"></script>
+    <script src="scripts/directives/yunzhiauditdepartmentofmandatoryinstrument.js"></script>
+    <script src="scripts/controllers/standard/personnelfile/detailController.js"></script>
+    <script src="scripts/services/standardpersonnelfiledetailservice.js"></script>
+    <script src="scripts/controllers/standard/personnelfile/detailaddController.js"></script>
+    <script src="scripts/directives/yunzhipersonalfile.js"></script>
+    <script src="scripts/services/personalfileservice.js"></script>
+    <script src="scripts/directives/yunzhistandardpersonnel.js"></script>
+    <script src="scripts/services/standardpersonnelservice.js"></script>
+    <script src="scripts/services/mandatoryinstrumentapplyservice.js"></script>
+    <script src="scripts/directives/yunzhiHistoryOpinionOfWork.js"></script>
+    <script src="scripts/services/applyservice.js"></script>
+    <script src="scripts/filters/departmentshowcheckability.js"></script>
+    <script src="scripts/controllers/standard/file/checkdetailaddController.js"></script>
+    <script src="scripts/controllers/standard/file/checkdetailController.js"></script>
+    <script src="scripts/services/standarddevicecheckdetailservice.js"></script>
+    <script src="scripts/directives/yunzhiinstrumenttypefirstlevel.js"></script>
+    <script src="scripts/services/instrumentFirstLevelTypeService.js"></script>
+    <script src="scripts/services/applytypeservice.js"></script>
+    <script src="scripts/controllers/system/qualifiercertificatetype/indexController.js"></script>
+    <script src="scripts/controllers/system/qualifiercertificatetype/addController.js"></script>
+    <script src="scripts/services/qualifiercertificatetypeservice.js"></script>
+    <script src="scripts/services/instrumentcheckinfoservice.js"></script>
+    <script src="scripts/controllers/mandatory/qualified/addController.js"></script>
+    <script src="scripts/controllers/mandatory/appointcheckinstrument/index.js"></script>
+    <script src="scripts/services/instrumentemploymentinfo.js"></script>
+    <script src="scripts/directives/yunzhiqualifier.js"></script>
+    <script src="scripts/services/qualifierservice.js"></script>
+    <script src="scripts/filters/mandatoryinstrumentstatus.js"></script>
+    <script src="scripts/controllers/department/index.js"></script>
+    <script src="scripts/filters/yunzhiDistrictName.js"></script>
+    <script src="scripts/directives/yunzhiinstrumentemploymentinfo.js"></script>
+    <script src="scripts/directives/yunzhiback.js"></script>
+    <script src="scripts/directives/yunzhiDeviceSet.js"></script>
+    <script src="scripts/services/devicesetservice.js"></script>
+    <script src="scripts/controllers/standard/filedeviceinstrument/index.js"></script>
+    <script src="scripts/services/deviceinstrumentservice.js"></script>
+    <script src="scripts/directives/yunzhicheckcycle.js"></script>
+    <script src="scripts/controllers/mandatory/appointcheckinstrument/edit.js"></script>
+    <script src="scripts/filters/checkcycle.js"></script>
+    <script src="scripts/services/mandatoryInstrumentTypeService.js"></script>
+    <script src="scripts/directives/yunzhiMandatoryInstrumentType.js"></script>
+    <script src="scripts/directives/yunzhiInstrumentAuditStatus.js"></script>
+    <script src="scripts/filters/checkcyclecontroller.js"></script>
+    <script src="scripts/filters/menushow.js"></script>
+    <script src="scripts/directives/yunzhiTechnicalInstitution.js"></script>
+    <script src="scripts/controllers/mandatory/integratedAudit/index.js"></script>
+    <script src="scripts/controllers/mandatory/instrumentcheckinfo/index.js"></script>
+    <script src="scripts/directives/yunzhiStandardDeviceInstrumentType.js"></script>
+    <script src="scripts/services/standardDeviceInstrumentTypeService.js"></script>
+    <script src="scripts/filters/mandatoryInstrumentNextCheckDate.js"></script>
+    <script src="scripts/controllers/standard/devicesetmanage/index.js"></script>
+    <script src="scripts/services/instrumentService.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

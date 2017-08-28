@@ -1,0 +1,41 @@
+<div class="form-group">
+    <label class="col-sm-4 control-label">您的意见</label>
+    <div class="col-sm-8">
+        <textarea class="form-control" rows="3" ng-model="work.opinion"></textarea>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-4 control-label"></label>
+    <div class="col-sm-8">
+        <label ng-show="showSendToNextDepartment">
+            <input icheck type="radio" ng-click="sendToNextDepartment()" ng-model="auditType" value="sendToNextDepartment">&nbsp;送下一审核部门&nbsp;&nbsp;</label>
+        <label ng-show="showBackToApplyDepartment()">
+            <input icheck type="radio" ng-model="auditType" value="backToApplyDepartment">&nbsp;退回申请人&nbsp;&nbsp;</label>
+        <label ng-show="showBackToPreDepartment()">
+            <input icheck ng-click="backToPreDepartment()" type="radio" ng-model="auditType"
+                   value="backToPreDepartment">&nbsp;退回提交人&nbsp;&nbsp;</label>
+        <label>
+            <input icheck type="radio" ng-model="auditType" value="done">&nbsp;办结&nbsp;&nbsp;</label>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-4 control-label">送审部门</label>
+    <div class="col-sm-8">
+        <div ng-show="show('sendToNextDepartment')">
+            <!--能过当前工作流结点选下一工作流结点-->
+            <yunzhi-next-workflow-node data-workflow-node="work.workflowNode"
+                                       ng-model="ngModel.workflowNode"></yunzhi-next-workflow-node>
+            <!--通过工作流结点，显示符合工作流的审核部门-->
+            <div>
+                <yunzhi-audit-department ng-model="ngModel.department"
+                                         data-workflow-node="ngModel.workflowNode"></yunzhi-audit-department>
+            </div>
+        </div>
+        <p class="form-control-static" ng-show="show('backToPreDepartment')">
+            {{work.preWork.auditDepartment.name}}
+        </p>
+        <p class="form-control-static" ng-show="show('backToApplyDepartment')">
+            {{originWork.preWork.auditDepartment.name}}
+        </p>
+    </div>
+</div>

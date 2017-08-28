@@ -1,0 +1,63 @@
+<div class="table-responsive">
+    <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+        <div class="row" ng-show="pageIsShow">
+            <div class="col-sm-4">
+                <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+            </div>
+            <div class="col-sm-4 text-center">
+                <yunzhi-exportbtn></yunzhi-exportbtn>
+            </div>
+            <div class="col-sm-4">
+            </div>
+        </div>
+        <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th ng-if="showShi()">市</th>
+                <th ng-if="showQuxian()">区县</th>
+                <th ng-if="showDepartment()">技术机构</th>
+                <th>标准装置名称</th>
+                <th>学科类别</th>
+                <th>一级类别</th>
+                <th>二级类别</th>
+                <th>准确度等级</th>
+                <th>测量范围</th>
+                <th>地址</th>
+                <th>联系电话</th>
+                <th ng-show="isShow.Add">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="object in data.content">
+                <td>{{$index+1}}</td>
+                <td ng-if="showShi()">{{object.deviceSet.department.district.name}}</td>
+                <td ng-if="showQuxian()">{{object.deviceSet.department.district.name}}</td>
+                <td ng-if="showDepartment()">{{object.department.name}}</td>
+                <td>
+                    <span ng-repeat="deviceSet in object.deviceSets">
+                        {{deviceSet.name}}
+                    </span>
+                    <button ng-click="log(object)">show</button>
+                </td>
+                <td>{{object.instrumentType.discipline.name}}</td>
+                <td>{{object.deviceSet.name}}</td>
+                <td></td>
+                <td>{{object.accuracy.value}}</td>
+                <td>{{object.measureScale.value}}</td>
+                <td ng-show="showAddress()">{{object.deviceSet.department.address}}</td>
+                <td ng-show="show">{{object.deviceSet.department.phone}}</td>
+                <td ng-show="isShow.Add">
+                    <yunzhi-access data-route="standard.Authorization"><a
+                            ui-sref="standard.AuthorizationEdit({deviceInstrument: object})"
+                            class="btn btn-info btn-xs"><i class="fa fa-paste"></i>&nbsp;编辑</a></yunzhi-access>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <yunzhi-page ng-show="pageIsShow" data-total-pages="data.totalPages"
+                     data-total-elements="data.totalElements" data-first="data.first" data-last="data.last"
+                     data-number="data.number" data-size="data.size"
+                     data-number-of-elements="data.numberOfElements"></yunzhi-page>
+    </div>
+</div>

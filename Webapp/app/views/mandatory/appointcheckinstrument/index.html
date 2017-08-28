@@ -1,0 +1,86 @@
+<div class="row">
+    <form class="form-horizontal ng-pristine ng-valid" ng-submit="submit()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">区域：</label>
+                    <div class="col-sm-8">
+                        <yunzhi-district ng-model="params.district"></yunzhi-district>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">器具用户：</label>
+                    <div class="col-sm-8">
+                        <yunzhi-instrument-user
+                                data-config="{departmentType: '器具用户'}"
+                                data-district="params.district"
+                                ng-model="params.department"></yunzhi-instrument-user>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">学科类别：</label>
+                    <div class="col-sm-8">
+                        <yunzhi-discipline ng-model="params.discipline"></yunzhi-discipline>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">一级类别：</label>
+                    <div class="col-sm-8">
+                        <yunzhi-instrument-type-first-level
+                                data-discipline="params.discipline"
+                                ng-model="params.instrumentTypeFirstLevel"></yunzhi-instrument-type-first-level>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">二级类别：</label>
+                    <div class="col-sm-8">
+                        <yunzhi-mandatory-instrument-type
+                                data-instrument-type-first-level="params.instrumentTypeFirstLevel"
+                                ng-model="params.instrumentType"></yunzhi-mandatory-instrument-type>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <label class="col-sm-4 control-label">系统编号：</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" type="text" ng-model="params.id">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <label class="col-sm-4 control-label">器具名称：</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" ng-model="params.name">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label"></label>
+                    <div class="col-sm-8">
+                        <button type="submit" class="btn btn-info"><i class="fa fa-search"></i>&nbsp;&nbsp;查询
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div ng-include="'views/mandatory/integrated/indexTable.html'"></div>
+</div>

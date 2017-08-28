@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pingyin": "qingxuanze" 
+    },
+    {
+        "id": 1,
+        "name": "检定证书",
+        "pingyin": "jiandingzhengshu"
+    },
+    {
+        "id": 2,
+        "name": "测试证书",
+        "pingyin": "ceshizhengshu"
+    },
+    {
+        "id": 3,
+        "name": "校准证书",
+        "pingyin": "jiaozhunzhengshu"
+    }
+]

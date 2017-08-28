@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "type": "province",
+        "name": "河北省",
+        "pingyin": "hebesheng"
+    },
+    {
+        "id": 2,
+        "type": "city",
+        "name": "河北省--廊坊市",
+        "pingyin": "langfangshi"
+    },
+    {
+        "id": 3,
+        "type": "district",
+        "name": "河北省--廊坊市--安次区",
+        "pingyin": "anciqu"
+    },
+    {
+        "id": 4,
+        "type": "city",
+        "name": "河北省--唐山市",
+        "pingyin": "tangshanshi"
+    }
+]

@@ -1,0 +1,89 @@
+<div class="row" ng-controller="RegisterTechnologyIndexCtrl">
+    <form class="form-horizontal ng-pristine ng-valid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">区域:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-district ng-model="district"></yunzhi-district>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">选择:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-choice ng-model="choice" data-items="items"></yunzhi-choice>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">{{choice.name}}:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-choice-name ng-model="choiceName" data-choice="choice"></yunzhi-choice-name>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hr-line-dashed"></div>
+    </form>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-xs-2 col-xs-offset-10">
+                    <button class="btn btn-info btn-sm" ng-click="add()">新增</button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>主体</th>
+                                <th>机构代码</th>
+                                <th>单位名称</th>
+                                <th>邮编编号</th>
+                                <th>地址</th>
+                                <th>法人姓名</th>
+                                <th>法人联系方式</th>
+                                <th>注册人姓名</th>
+                                <th>注册人联系方式</th>
+                                <th>注册日期</th>
+                                <th>更新日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in datas">
+                                <td>{{$index+1}}</td>
+                                <td>{{data.district}}</td>
+                                <td>{{data.code}}</td>
+                                <td>{{data.name}}</td>
+                                <td>{{data.pcode}}</td>
+                                <td>{{data.address}}</td>
+                                <td>{{data.legalName}}</td>
+                                <td>{{data.legalPhone}}</td>
+                                <td>{{data.registrantName}}</td>
+                                <td>{{data.registrantPhone}}</td>
+                                <td>{{data.registerTime}}</td>
+                                <td>{{data.updateTime}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <yunzhi-page></yunzhi-page>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

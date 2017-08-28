@@ -1,0 +1,28 @@
+<div>
+    <div>申请时间：{{work.apply.applyTime}}</div>
+    <div>申请单位：{{work.apply.department.name}}</div>
+    <div>联系人：{{work.apply.contactName}}</div>
+    <div>联系电话：{{work.apply.contactNumber}}</div>
+    <div>单位地址：{{work.apply.department.address}}</div>
+    <div>器具名称：{{mandatoryInstrumentApply.mandatoryInstrument.name}}</div>
+    <div>学科分类：{{mandatoryInstrumentApply.mandatoryInstrument.instrumentProduction.instrumentType.discipline.name}}</div>
+    <div>器具分类：{{mandatoryInstrumentApply.mandatoryInstrument.instrumentProduction.instrumentType.name}}</div>
+    <div>用途：{{mandatoryInstrumentApply.mandatoryInstrument.purpose.name}}</div>
+    <div>准备度等级/示值偏差:{{mandatoryInstrumentApply.mandatoryInstrument.instrumentProduction.accuracy.value}}</div>
+    <div>测试范围：{{mandatoryInstrumentApply.mandatoryInstrument.instrumentProduction.measureScale.value}}</div>
+    <div>规格型号：{{mandatoryInstrumentApply.mandatoryInstrument.instrumentProduction.specification.value}}</div>
+    <div>历史审核意见：<yunzhi-history-opinion-of-work ng-model="work"></yunzhi-history-opinion-of-work></div>
+    <div ng-hide="work.done">
+        <yunzhi-audit-choose
+                data-type="'mandatoryInstrument'"
+                data-data="{mandatoryInstrument: mandatoryInstrumentApply.mandatoryInstrument}"
+                data-mandatory-instrument="mandatoryInstrumentApply.mandatoryInstrument"
+                data-work="work"
+                ng-model="data.auditInput"></yunzhi-audit-choose>
+        <button type="button" ng-click="submit()">确认</button>
+    </div>
+    <div ng-show="work.done">
+         <button type="button">返回</button>
+    </div>    
+    <button ng-click="console.log(work.apply)">showdata</button>
+</div>

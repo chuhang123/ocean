@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "type": "city",
+    "name": "请选择",
+    "pingyin": "qingxuanze"
+  },
+  {
+    "id": 1,
+    "type": "city",
+    "name": "廊坊市",
+    "pingyin": "langfangshi"
+  },
+  {
+    "id": 2,
+    "type": "district",
+    "name": "廊坊市--安次区",
+    "pingyin": "anciqu"
+  },
+  {
+    "id": 3,
+    "type": "district",
+    "name": "廊坊市--广阳区",
+    "pingyin": "guangyangqu"
+  },
+  {
+    "id": 4,
+    "type": "district",
+    "name": "廊坊市--霸州市",
+    "pingyin": "bazhoushi"
+  },
+  {
+    "id": 5,
+    "type": "district",
+    "name": "廊坊市--三河市",
+    "pingyin": "sanheshi"
+  },
+  {
+    "id": 5,
+    "type": "district",
+    "name": "廊坊市--三河市",
+    "pingyin": "sanheshi"
+  },
+  {
+    "id": 6,
+    "type": "district",
+    "name": "廊坊市--固安县",
+    "pingyin": "guanxian"
+  },
+  {
+    "id": 7,
+    "type": "district",
+    "name": "廊坊市--永清县",
+    "pingyin": "yongqingxian"
+  },
+  {
+    "id": 8,
+    "type": "district",
+    "name": "廊坊市--大城县",
+    "pingyin": "dachengxian"
+  },
+  {
+    "id": 9,
+    "type": "district",
+    "name": "廊坊市--文安县",
+    "pingyin": "wenanxian"
+  },
+  {
+    "id": 10,
+    "type": "district",
+    "name": "廊坊市--大厂回族自治县",
+    "pingyin": "dachanghuizuzizhixian"
+  }
+]

@@ -1,0 +1,155 @@
+<div class="content" ng-controller="DashboardCtrl">
+    <div class="row">
+        <div class="col-lg-12 text-center m-t-md">
+            <h1>
+                欢迎使用本系统
+                <small>{{config.title}}欢迎您!</small>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 ">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <div panel-tools></div>
+                    系统信息
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <div class="small">
+                                <i class="fa fa-bolt"></i> 登录统计
+                            </div>
+                            <div>
+                                <h1 class="font-extra-bold m-t-xl m-b-xs">
+                                    226,802
+                                </h1>
+                                <small>本年度登录次数累计</small>
+                            </div>
+                            <div class="small m-t-xl">
+                                <i class="fa fa-clock-o"></i> 自2017年1月1日起
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center small">
+                                <i class="fa fa-laptop"></i> 月登录环比统计 (2017年5月)
+                            </div>
+                            <div class="flot-chart" style="height: 160px">
+                                <div flot class="flot-chart-content" dataset="chartUsersData"
+                                     options="chartUsersOptions"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="small">
+                                <i class="fa fa-clock-o"></i> 系统已稳定运行
+                            </div>
+                            <div>
+                                <h1 class="font-extra-bold m-t-xl m-b-xs">
+                                    3,652 天
+                                </h1>
+                                <small>520 周</small>
+                            </div>
+                            <div class="small m-t-xl">
+                                <i class="fa fa-clock-o"></i> 系统上线日期：2007年3月18日
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <!--<span class="pull-right">-->
+                    <!--You have two new messages from <a href="">Monica Bolt</a>-->
+                    <!--</span>-->
+                    更新时间:2017年5月18日
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="hpanel">
+                <div class="panel-body text-center h-200">
+                    <i class="pe-7s-graph1 fa-4x"></i>
+                    <h1 class="m-xs">1 206</h1>
+                    <h3 class="font-extra-bold no-margins text-success">
+                        器具总数
+                    </h3>
+                    <small>系统内所有器具总数（不含报废器具）</small>
+                </div>
+                <div class="panel-footer">
+                    更新时间:2017年5月18日
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="hpanel stats">
+                <div class="panel-body">
+                    <div class="stats-title pull-left">
+                        <h4>一次合格率</h4>
+                    </div>
+                    <c3chart bindto-id="gauge-plot2-chart">
+                        <chart-colors color-pattern="#CFCFCF,#62cb31"/>
+                        <chart-column column-id="一次合格率" column-values="85" column-type="gauge"/>
+                        <chart-gauge min="0" max="100" units="" width="39"/>
+                    </c3chart>
+                </div>
+                <div class="panel-footer">
+                    统计周期：<strong>2017</strong>年度，统计区域：<strong>廊坊市</strong>，统计范围：<strong>强检器具</strong>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="hpanel stats">
+                <div class="panel-body h-200">
+                    <div class="stats-title pull-left">
+                        <h4>检定数据</h4>
+                    </div>
+                    <div class="stats-icon pull-right">
+                        <i class="pe-7s-monitor fa-4x"></i>
+                    </div>
+                    <div class="m-t-xl">
+                        <h1 class="text-success">860,032</h1>
+                        <small>一次性检定合格：<strong>850,012</strong></small>
+                        <br/>
+                        <small>一次性检定不合格：<strong>542</strong></small>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    统计周期：2017年度
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="hpanel stats">
+                <div class="panel-body h-300">
+                    <div id="{{echarts.pieId}}"></div>
+                </div>
+                <div class="panel-footer">
+                    合格次数：一次性合格次数 + 非一次性合格次数
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="hpanel stats">
+                <div class="panel-body h-300">
+                    <div id="{{echarts.barId}}"></div>
+                </div>
+                <div class="panel-footer">
+                    一次性合格率 = 一次性合格次数 / 检定总次数
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="hpanel stats">
+                <div class="panel-body h-300">
+                    <div id="{{echarts.oneOffUpToStandardRateId}}"></div>
+                </div>
+                <div class="panel-footer">
+                    一次性合格率 = 一次性合格次数 / 检定总次数
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

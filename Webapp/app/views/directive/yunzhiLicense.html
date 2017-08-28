@@ -1,0 +1,7 @@
+<!--许可证号-->
+<ui-select ng-model="license.selected" theme="bootstrap" ng-change="updateModel(license.selected)" ng-hide="hide">
+    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+    <ui-select-choices repeat="license in licenses | propsFilter: {name: $select.search, pinyin: $select.search}">
+        <div ng-bind-html="license.name | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>

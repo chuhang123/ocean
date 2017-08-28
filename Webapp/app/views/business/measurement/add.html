@@ -1,0 +1,67 @@
+<div id="businessMeasurementAdd_page" ng-controller="BusinessMeasurementAddCtrl" style="padding:10px;">
+    <form id="businessMeasurementAdd_form" method="post">
+        <!-- 计量标准装置名称 -->
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-4">
+                <label for="businessMeasurementAdd_appliance_name">计量标准装置名称:</label>
+            </div>
+            <div class="col-md-3">
+                <input id="businessMeasurementAdd_appliance_name" type="text" />
+            </div>
+        </div>
+        <!-- 申请单位 -->
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-4">
+                <label for="businessMeasurementAdd_unit">申请单位:</label>
+            </div>
+            <div class="col-md-3">
+                <input id="businessMeasurementAdd_unit" type="text" value="申请单位A" disabled="true" />
+            </div>
+        </div>
+        <!-- 联系人 -->
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-4">
+                <label for="businessMeasurementAdd_name">联系人:</label>
+            </div>
+            <div class="col-md-3">
+                <input id="businessMeasurementAdd_name" type="text" />
+            </div>
+        </div>
+        <!-- 邮编-->
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-4">
+                <label for="businessMeasurementAdd_zipcode">邮编:</label>
+            </div>
+            <div class="col-md-3">
+                <input id="businessMeasurementAdd_zipcode" type="text" />
+            </div>
+        </div>
+        <!-- 电话 -->
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-4">
+                <label for="businessMeasurementAdd_phonenumber">电话:</label>
+            </div>
+            <div class="col-md-3">
+                <input id="businessMeasurementAdd_phonenumber" type="text" />
+            </div>
+        </div>
+        <!-- 申请日期-->
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-4">
+                <label for="businessMeasurementAdd_time"> 申请日期:</label>
+            </div>
+            <div class="col-md-3">
+                <input id="businessMeasurementAdd_time" type="text" disabled="true" />
+            </div>
+        </div>
+    </form>
+    <div class="row" style="margin-bottom:10px">
+        <table id="businessMeasurementAdd_table"></table>
+    </div>
+    <!-- 保存按钮 -->
+    <div class="row" style="margin-bottom:10px">
+        <div class="col-md-6 text-right">
+            <button id="btn" ng-click="btnsubmit()">保存</button>
+        </div>
+    </div>
+</div>

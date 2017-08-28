@@ -1,0 +1,153 @@
+<form class="form-horizontal" ng-submit="submit()">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">部件来源：</label>
+                <div class="col-sm-8">
+                    <select class="form-control" ng-init="selectedName = names[0]" ng-model="selectedName" ng-options="x for x in names">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">测量参数：</label>
+                <div class="col-sm-8">
+                    <select class="form-control" ng-disabled="disabled">
+                        <option>请选择</option>
+                        <option>压力</option>
+                        <option>温度</option>
+                        <option>电导率</option>
+                    <select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i>&nbsp;&nbsp;查询
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-10">
+                <a ui-sref="standard.FileEdit"  ng-show="isShow.Add">
+                    <button class="btn btn-info btn-sm" type="button"><i class="fa fa-plus"></i>&nbsp;新增</button>
+                </a>
+            </div>
+        </div>
+        <div ng-show="selectedName == '采购'">
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th width="2%">序号</th>
+                            <th width="2%">型号</th>
+                            <th width="3%">名称</th>
+                            <th width="2%">编号</th>
+                            <th width="2%">直径</th>
+                            <th width="2%">长度</th>
+                            <th width="2%">材质</th>
+                            <th width="2%">部件来源</th>
+                            <th width="2%">采购人</th>
+                            <th width="2%">采购时间</th>
+                            <th width="2%">创建时间</th>
+                            <th width="3%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>SZP1-1U</td>
+                            <td><a ui-sref="standard.FileDetail1">感应耦合传输式CTD测量仪</a></td>
+                            <td style="word-wrap: break-word;">z8-3232</td>
+                            <td style="word-wrap: break-word;">2.8</td>
+                            <td style="word-wrap: break-word;">15</td>
+                            <td style="word-wrap: break-word;">钛合金</td>
+                            <td style="word-wrap: break-word;">采购</td>
+                            <td style="word-wrap: break-word;">张三</td>
+                            <td style="word-wrap: break-word;">2017-03-10</td>
+                            <td style="word-wrap: break-word;">2017-03-10</td>
+                            <td style="word-wrap: break-word;">
+                                <a ui-sref="standard.FileEdit({deviceSet: object})" class="btn btn-xs btn-info"> <i class="fa fa-paste"></i>&nbsp;
+                                    编辑&nbsp;</a>
+                                <a ng-click="delete($index, object)" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i>&nbsp;
+                                    删除&nbsp;</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <yunzhi-page data-total-pages="data.totalPages" data-total-elements="data.totalElements" data-first="data.first" data-last="data.last" data-number="data.number" data-size="data.size" data-number-of-elements="data.numberOfElements"></yunzhi-page>
+                </div>
+            </div>
+        </div>
+        <div ng-show="selectedName == '自制'">
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th width="2%">序号</th>
+                            <th width="2%">型号</th>
+                            <th width="3%">名称</th>
+                            <th width="2%">编号</th>
+                            <th width="2%">部件来源</th>
+                            <th width="2%">创建时间</th>
+                            <th width="3%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>SZP1-1U</td>
+                            <td><a ui-sref="standard.FileDetail1">感应耦合传输式CTD测量仪</a></td>
+                            <td style="word-wrap: break-word;">z8-3232</td>
+                            <td style="word-wrap: break-word;">自制</td>
+                            <td style="word-wrap: break-word;">2017-02-23</td>
+                            <td style="word-wrap: break-word;">
+                                <a ui-sref="standard.FileEdit({deviceSet: object})" class="btn btn-xs btn-info"> <i class="fa fa-paste"></i>&nbsp;
+                                    编辑&nbsp;</a>
+                                <a ng-click="delete($index, object)" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i>&nbsp;
+                                    删除&nbsp;</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <yunzhi-page data-total-pages="data.totalPages" data-total-elements="data.totalElements" data-first="data.first" data-last="data.last" data-number="data.number" data-size="data.size" data-number-of-elements="data.numberOfElements"></yunzhi-page>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

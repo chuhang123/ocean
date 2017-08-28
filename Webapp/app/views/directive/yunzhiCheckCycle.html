@@ -1,0 +1,7 @@
+<!--检定周期-->
+<ui-select ng-model="checkCycle.selected" theme="bootstrap" ng-disabled="disabled">
+    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+    <ui-select-choices repeat="checkCycle in checkCycles | propsFilter: {name: $select.search, pinyin: $select.search}">
+        <div ng-bind-html="checkCycle.name | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>

@@ -1,0 +1,163 @@
+<div class="row" ng-controller="OptionalIntegratedIndexCtrl">
+    <form class="form-horizontal ng-pristine ng-valid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">区域:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-district ng-model="district"></yunzhi-district>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">器具用户:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-measurement-user data-district="district" ng-model="measureUser"></yunzhi-measurement-user>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">器具名称:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-appliance data-measure-user="measureUser" ng-model="appliance"></yunzhi-appliance>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">测量范围:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-measuring-range data-appliance="appliance" ng-model="measuringRange"></yunzhi-measuring-range>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">准确度等级:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-accuracy data-appliance="appliance" ng-model="accuracy"></yunzhi-accuracy>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">制造单位:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-manufacturer ng-model="manufacturer"></yunzhi-manufacturer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">许可证号:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-license data-manufacturer="manufacturer" ng-model="license"></yunzhi-license>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">出厂编号:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-serial-number data-manufacturer="manufacturer" ng-model="serialNumber"></yunzhi-serial-number>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <button ng-click="advancedSearch()" class="btn btn-info">
+                    <span ng-hide="showSelect">高级搜索</span><span ng-show="showSelect">收起</span>
+                </button>
+            </div>
+        </div>
+        <div ng-show="showSearch">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">用途:</label>
+                        <div class="col-sm-8">
+                            <yunzhi-purpose ng-model="purpose"></yunzhi-purpose>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">状态:</label>
+                        <div class="col-sm-8">
+                            <yunzhi-status ng-model="status"></yunzhi-status>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-xs-2 col-xs-offset-10">
+                    <button class="btn btn-info btn-sm" ng-click="add()">新增</button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>市</th>
+                                <th>区县</th>
+                                <th>用户</th>
+                                <th>器具名称</th>
+                                <th>状态</th>
+                                <th>型号规格</th>
+                                <th>用途</th>
+                                <th>测量范围</th>
+                                <th>准确度等级</th>
+                                <th>制造单位</th>
+                                <th>出厂编号</th>
+                                <th>安装地点</th>
+                                <th>许可证号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in datas">
+                                <td>{{$index+1}}</td>
+                                <td>{{data.region}}</td>
+                                <td>{{data.county}}</td>
+                                <td>{{data.user}}</td>
+                                <td>{{data.name}}</td>
+                                <td>{{data.status}}</td>
+                                <td>{{data.type}}</td>
+                                <td>{{data.purpose}}</td>
+                                <td>{{data.measureScale}}</td>
+                                <td>{{data.rank}}</td>
+                                <td>{{data.manufactureUnit}}</td>
+                                <td>{{data.factoryNum}}</td>
+                                <td>{{data.fixSite}}</td>
+                                <td>{{data.licenseNum}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <yunzhi-page></yunzhi-page>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

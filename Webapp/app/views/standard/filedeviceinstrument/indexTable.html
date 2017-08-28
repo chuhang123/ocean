@@ -1,0 +1,53 @@
+<div class="table-responsive">
+    <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+        <div class="row" ng-show="pageIsShow">
+            <div class="col-sm-4">
+                <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+            </div>
+            <div class="col-sm-4 text-center">
+                <yunzhi-exportbtn></yunzhi-exportbtn>
+            </div>
+            <div class="col-sm-4">
+            </div>
+        </div>
+        <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>标准装置名称</th>
+                <th>学科类别</th>
+                <th>一级类别</th>
+                <th>二级类别</th>
+                <th>准确度等级</th>
+                <th>测量范围</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="object in data.content">
+                <td>{{$index+1}}</td>
+                <td>
+                    <span ng-if="showManyDeviceSet()" ng-repeat="deviceSet in object.deviceSets">
+                        {{deviceSet.name}}&nbsp;&nbsp;
+                    </span>
+                    <span ng-if="!showManyDeviceSet()">{{deviceSet.name}}</span>
+                </td>
+                <td>{{object.measureScale.instrumentType.instrumentFirstLevelType.discipline.name}}</td>
+                <td>{{object.measureScale.instrumentType.instrumentFirstLevelType.name}}</td>
+                <td>{{object.measureScale.instrumentType.name}}</td>
+                <td>{{object.accuracy.value}}</td>
+                <td>{{object.measureScale.value}}</td>
+                <td>
+                    <yunzhi-access ng-if="showDelete()" data-route="standard.Authorization"><a
+                            ng-click="delete($index, object.deviceSets[0].id, object.measureScale.id, object.accuracy.id, object)"
+                            class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i>&nbsp;删除</a></yunzhi-access>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <yunzhi-page ng-show="pageIsShow" data-total-pages="data.totalPages"
+                     data-total-elements="data.totalElements" data-first="data.first" data-last="data.last"
+                     data-number="data.number" data-size="data.size"
+                     data-number-of-elements="data.numberOfElements"></yunzhi-page>
+    </div>
+</div>

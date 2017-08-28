@@ -1,0 +1,7 @@
+<!--测量范围-->
+<ui-select ng-model="measuringRange.selected" theme="bootstrap" ng-change="updateModel(measuringRange.selected)" ng-hide="hide">
+    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+    <ui-select-choices repeat="measuringRange in measuringRanges | propsFilter: {name: $select.search, pinyin: $select.search}">
+        <div ng-bind-html="measuringRange.name | highlight:$select.search"></div>
+    </ui-select-choices>
+</ui-select>

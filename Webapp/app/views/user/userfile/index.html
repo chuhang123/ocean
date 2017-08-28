@@ -1,0 +1,74 @@
+管理员放在前面
+<div class="row">
+    <form class="form-horizontal ng-pristine ng-valid" ng-submit="submit()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">真实姓名:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="params.departmentName"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label"></label>
+                    <div class="col-sm-8">
+                        <button type="submit" class="btn btn-info"><i class="fa fa-search"></i>&nbsp;&nbsp;查询
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="table-responsive">
+        <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+            <div class="row">
+                <div class="col-sm-4">
+                    <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                </div>
+            </div>
+            <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped"
+                   style="table-layout: fixed; width: 100%">
+                <thead>
+                <tr>
+                    <th width="5%">编号</th>
+                    <th width="10%">真实姓名</th>
+                    <th width="10%">登录名称</th>
+                    <th width="5%">用户状态</th>
+                    <th width="5%">用户类型</th>
+                    <th width="10%">注册时间</th>
+                    <th width="20%">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="word-wrap: break-word">1</td>
+                    <td style="word-wrap: break-word">张三</td>
+                    <td style="word-wrap: break-word">chuhang@yunzhiclub.com</td>
+                    <td style="word-wrap: break-word">冻结</td>
+                    <td style="word-wrap: break-word">普通用户</td>
+                    <td style="word-wrap: break-word">2017-04-20</td>
+                    <td style="word-wrap: break-word">
+                        <a class="btn btn-xs btn-info" ui-sref="system.UserfileEdit({data: object})"><i
+                                class="fa fa-paste"></i>&nbsp;编辑
+                        </a>&nbsp;&nbsp;
+                        <button class="btn btn-xs btn-danger" ng-click="delete($index, object)"><i class="fa fa-trash-o"></i>&nbsp;删除
+                        </button>&nbsp;&nbsp;
+                        <button class="btn btn-xs btn-success" ng-click="resetPassword(object)"><i
+                                class="fa fa-pencil-square-o"></i>&nbsp;重置密码
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <yunzhi-page data-total-pages="data.totalPages" data-total-elements="data.totalElements"
+                         data-first="data.first" data-last="data.last" data-number="data.number" data-size="data.size"
+                         data-number-of-elements="data.numberOfElements"></yunzhi-page>
+        </div>
+    </div>
+</div>
+

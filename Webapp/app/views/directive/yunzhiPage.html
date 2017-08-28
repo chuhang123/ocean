@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-4">
+        {{number * size + numberOfElements}}/{{totalElements}}
+    </div>
+    <div class="col-md-8">
+        <div class="dataTables_paginate paging_simple_numbers" ng-show="showPage()">
+            <ul class="pagination">
+                <li ng-class="{previous, disabled: first}" ng-click="prePage()"><a
+                        href="javascript:void(0)">上一页</a>
+                </li>
+                <li ng-class="{previous, disabled: first}" ng-click="changePage(1)"><a
+                        href="javascript:void(0)">首页</a>
+                </li>
+                <li ng-repeat="page in pages" ng-class="{active: isActive(page)}"><a ng-click="changePage(page)" href="javascript:void(0)">{{page}}</a></li>
+                <li ng-class="{previous, disabled: last}" ng-click="changePage(totalPages)"><a
+                        href="javascript:void(0)">尾页</a>
+                </li>
+                <li ng-class="{previous, disabled: last}"><a href="javascript:void(0)" ng-click="nextPage()">下一页</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>

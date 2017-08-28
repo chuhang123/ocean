@@ -1,0 +1,289 @@
+<div class="row">
+    <div class="col-lg-6">
+        <form method="get" class="form-horizontal" ng-submit="saveAndClose()" name="addForm">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">部件类型</label>
+                <div class="col-sm-8">
+                    <select ng-model="type" class="form-control">
+                        <option>请选择</option>
+                        <option value="0">测量</option>
+                        <option value="1">结构</option>
+                        <option value="2">电路</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">名称</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div ng-show="type == 1">
+
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">材质</label>
+                    <div class="col-sm-8">
+                        <input type="radio" name="caizhi"> 钛材
+                        <input type="radio" name="caizhi"> 不锈钢
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">设计/采购人</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">结构图</label>
+                    <div class="col-sm-8">
+                        <input type="file">
+                    </div>
+                </div>
+            </div>
+            <div ng-show="type == 2">
+                <label class="col-sm-4 control-label">电路类型</label>
+                <div class="col-sm-8">
+                    <select class="form-control">
+                        <option>请选择</option>
+                        <option>电导率电路</option>
+                        <option>控制电路</option>
+                        <option>单信电缆调制解调器</option>
+                        <option>单感应耦合调制解调器</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">版本号</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">定型时间</label>
+                    <div class="col-sm-8">
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">原理图</label>
+                    <div class="col-sm-8">
+                        <input type="file">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">PCB图</label>
+                    <div class="col-sm-8">
+                        <input type="file">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">原器件表</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div ng-show="type == 0">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">测量参数</label>
+                    <div class="col-sm-8">
+                        <select ng-model="argument" class="form-control">
+                            <option>请选择</option>
+                            <option value="0">压力</option>
+                            <option value="1">温度</option>
+                            <option value="2">电导率</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">型号</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="argument == 2">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">电极类型</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>请选择</option>
+                                <option>类型一</option>
+                                <option>类型二</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="argument == 1">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">直径</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">长度</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">材质</label>
+                        <div class="col-sm-8">
+                            <input type="radio" name="caizhi"> 钛材
+                            <input type="radio" name="caizhi"> 不锈钢
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">结构图</label>
+                        <div class="col-sm-8">
+                            <input type="file" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="argument == 0">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">编号</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">厂家</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">材质</label>
+                        <div class="col-sm-8">
+                            <input type="radio" name="caizhi"> 钛材
+                            <input type="radio" name="caizhi"> 不锈钢
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">结构尺寸</label>
+                        <div class="col-sm-8">
+                            <input type="file" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">量程</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">准确度</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">驱动方式</label>
+                        <div class="col-sm-8">
+                            <input type="radio" name="driver"> 电流源
+                            <input type="radio" name="driver"> 电压源
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">输出信号</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>请选择</option>
+                                <option value="0">电压</option>
+                                <option value="1">RS-232</option>
+                                <option value="2">RS-485</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">满度</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">零点</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">非线性</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">重复性</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">迟滞性</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">零点温漂</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">满度温漂</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">电阻热温度系数</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">零点高低温漂</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">满量程高低温漂</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">输入阻抗=桥压/1.5</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <button class="btn btn-primary" ng-hide="addForm.$submitted" type="submit"><i
+                        class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;保存
+                    </button>
+                    <button ng-disabled="true" ng-show="addForm.$submitted" class="btn btn-primary" type="button">
+                        &nbsp;&nbsp;数据正在处理...
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <div ng-bind="info" class="text-success"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

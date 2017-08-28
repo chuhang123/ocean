@@ -1,0 +1,7 @@
+<!--审核状态-->
+<ui-select ng-model="approvalStatus.selected" theme="bootstrap" ng-disabled="disabled">
+    <ui-select-match placeholder="请选择">{{$select.selected.value}}</ui-select-match>
+    <ui-select-choices repeat="approvalStatus in approvalStatuses | propsFilter: {key: $select.search, value: $select.search}">
+        <div ng-bind-html="approvalStatus.value | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>

@@ -1,0 +1,142 @@
+<div class="row" ng-controller="OptionalCheckdetailIndexCtrl">
+    <form class="form-horizontal ng-pristine ng-valid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">区域:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-district ng-model="district"></yunzhi-district>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">器具用户:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-measurement-user data-district="district" ng-model="measureUser"></yunzhi-measurement-user>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">器具名称:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-appliance ng-model="appliance"></yunzhi-appliance>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">证书编号:</label>
+                    <div class="col-sm-8" class="form-control">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">检定起始日期:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-date ng-model="date"></yunzhi-date>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">检定截止日期:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-date ng-model="date"></yunzhi-date>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">检定结果:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-check-result data-checkResult="checkResult" ng-model="checkResult"></yunzhi-check-result>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">检定单位:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-check-unit data-checkUnit="checkUnit" ng-model="checkUnit"></yunzhi-check-unit>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">示值偏差:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-indication-deviation data-indicationDeviation="indicationDeviation" ng-model="indicationDeviation"></yunzhi-indication-deviation>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hr-line-dashed"></div>
+    </form>
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- <div class="row">
+                        <div class="col-xs-2 col-xs-offset-10">
+                            <button class="btn btn-info btn-sm" ng-click="add()">新增</button>
+                        </div>
+                    </div> -->
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>主体</th>
+                                <th>用户</th>
+                                <th>器具名称</th>
+                                <th>证书编号</th>
+                                <th>示值偏差</th>
+                                <th>检定日期</th>
+                                <th>检定单位</th>
+                                <th>检定结果</th>
+                                <th>有效期至</th>
+                                <th>检定员</th>
+                                <th>核验员</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in datas">
+                                <td>{{$index+1}}</td>
+                                <td>{{data.district}}</td>
+                                <td>{{data.user}}</td>
+                                <td>{{data.dissipativeName}}</td>
+                                <td>{{data.certificateNum}}</td>
+                                <td>{{data.indicationDeviation}}</td>
+                                <td>{{data.checkTime}}</td>
+                                <td>{{data.checkUnit}}</td>
+                                <td>{{data.checkResult}}</td>
+                                <td>{{data.validityTime}}</td>
+                                <td>{{data.checker}}</td>
+                                <td>{{data.examiner}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <yunzhi-page></yunzhi-page>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

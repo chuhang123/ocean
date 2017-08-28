@@ -1,0 +1,7 @@
+<!--状态-->
+<ui-select ng-model="status.selected" theme="bootstrap" ng-disabled="disabled">
+    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+    <ui-select-choices repeat="status in statuses | propsFilter: {name: $select.search, pinyin: $select.search}">
+        <div ng-bind-html="status.name | highlight:$select.search"></div>
+    </ui-select-choices>
+</ui-select>

@@ -1,0 +1,75 @@
+<div class="row">
+    <form class="form-horizontal ng-pristine ng-valid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">人员:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-qualifier ng-model="standardPersonnel"></yunzhi-qualifier>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">资格证类别:</label>
+                    <div class="col-sm-8">
+                        <yunzhi-personal-file ng-model="personalFile"></yunzhi-personal-file>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-xs-2 col-xs-offset-10">
+                    <a ui-sref="personnel.personnelQualificationManageDetailAdd"><button class="btn btn-info btn-sm" type="button"><i class="fa fa-plus"></i>&nbsp;新增</button></a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>市</th>
+                                <th>区县</th>
+                                <th>技术机构</th>
+                                <th>姓名</th>
+                                <th>资格证类别</th>
+                                <th>发证日期</th>
+                                <th>有效期至</th>
+                                <th>报警日期</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="(key, object) in data.content">
+                                <td>{{object.region}}</td>
+                                <td>{{object.county}}</td>
+                                <td>{{object.technical}}</td>
+                                <td>{{object.name}}</td>
+                                <td>{{object.qualifierCertificateType}}</td>
+                                <td>{{object.issueDate}}</td>
+                                <td>{{object.validityDate}}</td>
+                                <td>{{object.alertDate}}</td>
+                                <td>
+                                    <yunzhi-access data-route="personnel.personnelQualificationManageDetail"><a ui-sref="personnel.personnelQualificationManageDetailEdit({data: object})">编辑</a></yunzhi-access> 删除</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <yunzhi-page data-total-pages="data.totalPages" data-total-elements="data.totalElements" data-first="data.first" data-last="data.last" data-number="data.number" data-size="data.size" data-number-of-elements="data.numberOfElements"></yunzhi-page>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

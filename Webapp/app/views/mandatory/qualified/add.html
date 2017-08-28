@@ -1,0 +1,119 @@
+<div class="row">
+    <div class="col-lg-6">
+        <form method="get" class="form-horizontal" name="addForm" ng-submit="saveAndClose()">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">器具使用信息名称</label>
+                <div class="col-sm-8">
+                    <yunzhi-instrument-employment-info ng-model="data.mandatoryInstrument"></yunzhi-instrument-employment-info>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">证书编号</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.certificateNum" name="certificateNum" required>
+                    <div class="m-t-xs" ng-show="addForm.certificateNum.$invalid && addForm.certificateNum.$touched">
+                        <span class="text-danger" ng-show="addForm.certificateNum.$error"><i class="fa fa-exclamation-triangle"></i> 此项不能为空 </span>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="form-group">-->
+                <!--<label class="col-sm-4 control-label">应收费用</label>-->
+                <!--<div class="col-sm-8">-->
+                    <!--<input type="text" class="form-control" ng-model="data.cost">-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="form-group">
+                <label class="col-sm-4 control-label">批准人</label>
+                <div class="col-sm-8">
+                    <yunzhi-qualifier ng-model="data.ratifierQualifier"></yunzhi-qualifier>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">核验员</label>
+                <div class="col-sm-8">
+                    <yunzhi-qualifier ng-model="data.verifierQualifier"></yunzhi-qualifier>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">检定员</label>
+                <div class="col-sm-8">
+                    <yunzhi-qualifier ng-model="data.inspectorQualifier"></yunzhi-qualifier>
+                </div>
+            </div>
+            <!--<div class="form-group" ng-repeat="checkResult in checkResults">-->
+                <!--<label class="col-sm-4 control-label" ng-init="showText = $index === 0 ? '检定结果' : ''">{{showText}}</label>-->
+                <!--<div class="col-sm-8">-->
+                    <!--<label>-->
+                        <!--<input icheck type="radio" ng-model="data.checkResult.id" ng-value="checkResult.id" required> {{checkResult.name}}-->
+                    <!--</label>-->
+                    <!--<label ng-repeat="sonCheckResult in checkResult.sonCheckResults">-->
+                        <!--<input icheck type="radio" ng-model="data.checkResult.id" ng-value="sonCheckResult.id" required>{{sonCheckResult.name}}-->
+                    <!--</label>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="form-group">
+                <label class="col-sm-4 control-label" >检定结果</label>
+                <div class="col-sm-8">
+                    <yunzhi-check-result ng-model="data.checkResult"></yunzhi-check-result>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">器具证书类型</label>
+                <div class="col-sm-8">
+                    <ui-select ng-model="data.instrumentCertificateType.selected" theme="bootstrap" ng-disabled="disabled">
+                        <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="instrumentCertificateType in instrumentCertificateTypes | propsFilter: {name: $select.search, pinyin: $select.search}">
+                            <div ng-bind-html="instrumentCertificateType.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">证书状态</label>
+                <div class="col-sm-8">
+                    <ui-select ng-model="data.certificateStatus.selected" theme="bootstrap" ng-disabled="disabled">
+                        <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="certificateStatus in certificateStatuses | propsFilter: {name: $select.search, pinyin: $select.search}">
+                            <div ng-bind-html="certificateStatus.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">检定日期</label>
+                <div class="col-sm-8">
+                    <yunzhi-date ng-model="data.checkDate"></yunzhi-date>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">有效期至</label>
+                <div class="col-sm-8">
+                    <yunzhi-date ng-model="data.validityDate"></yunzhi-date>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">报警日期</label>
+                <div class="col-sm-8">
+                    <yunzhi-date ng-model="data.alertDate"></yunzhi-date>
+                </div>
+            </div>
+            <div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-3">
+                    <button ng-hide="addForm.$submitted" class="btn btn-primary" type="submit">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;保存
+                    </button>
+                    <button ng-disabled="true" ng-show="addForm.$submitted" class="btn btn-primary" type="button">
+                        &nbsp;&nbsp;数据正在处理...
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <div ng-bind="info" class="text-success"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

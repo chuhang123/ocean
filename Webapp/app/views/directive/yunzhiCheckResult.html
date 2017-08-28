@@ -1,0 +1,8 @@
+<!--检定结果-->
+<ui-select ng-model="checkResult.selected" theme="bootstrap" ng-disabled="disabled">
+    <!--<pre>{{$selected.selected}}</pre>-->
+    <ui-select-match placeholder="请选择">{{$select.selected | fullNameWithParent:filterConfig}}</ui-select-match>
+    <ui-select-choices repeat="checkResult in checkResults | propsFilter: {name: $select.search, pinyin: $select.search}">
+        <div ng-bind-html="checkResult | fullNameWithParent:filterConfig | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>

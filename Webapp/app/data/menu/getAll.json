@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "name": "强检",
+    "module": "mandatory",
+    "controller": "#",
+    "_children": [
+      {
+        "id": 2,
+        "name": "强检-分类统计",
+        "module": "mandatory",
+        "controller": "NumberCategories"
+      },
+      {
+        "id": 3,
+        "name": "强检-综合查询",
+        "module": "mandatory",
+        "controller": "Integrated"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "非强检",
+    "module": "optional",
+    "controller": "#",
+    "_children": [
+      {
+        "id": 9,
+        "name": "非强检-综合查询",
+        "module": "optional",
+        "controller": "Integrated"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "用户管理",
+    "module": "user",
+    "controller": "Userfile",
+    "_children": []
+  }
+]

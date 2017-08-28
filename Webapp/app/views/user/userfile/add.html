@@ -1,0 +1,64 @@
+<div class="row" ng-controller="UserUserfileAddCtrl">
+    <div class="col-lg-6">
+        <form method="get" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">用户名</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.username">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">姓名</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="data.name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">区域</label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="data.region" ng-model="data.region">
+                        <option ng-repeat="region in regions" value="{{region.id}}">{{region.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">部门</label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="data.department" ng-model="data.department">
+                        <option ng-repeat="department in departments" value="{{department.id}}">{{department.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">岗位</label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="data.post" ng-model="data.post">
+                        <option ng-repeat="post in posts" value="{{post.id}}">{{post.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">角色权限</label>
+                <div class="col-sm-8">
+                    <div class="row" ng-repeat="role in roles">
+                        <div class="col-xs-12">
+                            <input type="checkbox" ng-model="role.checked" id="{{id + role.id}}" /> &nbsp;&nbsp;
+                            <label for="{{id + role.id}}">{{role.name}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <button class="btn btn-default" ng-click="saveAndNew()">保存并新建</button>
+                    <button class="btn btn-primary" ng-click="saveAndClose()">保存</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <div ng-bind="info" class="text-success"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

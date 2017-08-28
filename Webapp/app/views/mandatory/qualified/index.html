@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-xs-2 col-xs-offset-10" ng-show="isShow.operation">
+                    <a ui-sref="mandatory.instrumentCheckInfoAdd({})">
+                        <button class="btn btn-info btn-sm" type="button"><i class="fa fa-plus"></i>&nbsp;新增</button>
+                    </a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <yunzhi-exportbtn></yunzhi-exportbtn>
+                        </div>
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th width="11%">器具名称</th>
+                            <!--<th>准确度等级</th>-->
+                            <!--<th>用途</th>-->
+                            <!--<th>测量范围</th>-->
+                            <!--<th>制造单位</th>-->
+                            <!--<th>出厂编号</th>-->
+                            <!--<th>安装地点</th>-->
+                            <!--<th>许可证号</th>-->
+                            <th width="10%">检定日期</th>
+                            <th width="14%">检定单位</th>
+                            <th width="10%">检定结果</th>
+                            <th width="10%">有效期至</th>
+                            <th width="10%">报警日期</th>
+                            <th width="8%">检定员</th>
+                            <th width="8%">核验员</th>
+                            <th width="20%" ng-show="isShow.operation">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="object in data.content">
+                            <td style="word-wrap: break-word">{{object.mandatoryInstrument.name}}</td>
+                            <td style="word-wrap: break-word">{{object.checkDate | date}}</td>
+                            <td style="word-wrap: break-word">{{object.checkDepartment.name}}</td>
+                            <td style="word-wrap: break-word">{{object.checkResult.name}}</td>
+                            <td style="word-wrap: break-word">{{object.validityDate | date}}</td>
+                            <td style="word-wrap: break-word">{{object.alertDate | date}}</td>
+                            <td style="word-wrap: break-word">{{object.inspectorQualifier.name }}</td>
+                            <td style="word-wrap: break-word">{{object.verifierQualifier.name }}</td>
+                            <td ng-show="isShow.operation" style="word-wrap: break-word">
+                                <yunzhi-access data-route="standard.File"><a
+                                    ui-sref="mandatory.instrumentCheckInfoEdit({instrumentCheckInfo: object})" class="btn btn-xs btn-info">  <i class="fa fa-paste"></i>&nbsp;编辑&nbsp;</a></yunzhi-access>
+                                <a class="btn btn-xs btn-danger" ng-click="delete($index, object)"> <i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <yunzhi-page data-total-pages="data.totalPages" data-total-elements="data.totalElements" data-first="data.first" data-last="data.last" data-number="data.number" data-size="data.size" data-number-of-elements="data.numberOfElements"></yunzhi-page>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

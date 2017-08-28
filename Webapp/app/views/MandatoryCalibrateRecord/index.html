@@ -1,0 +1,160 @@
+
+<div class="content" ng-controller="MandatorycalibraterecordCtrl">
+    <div class="row">
+        <form class="form-horizontal ng-pristine ng-valid" ng-submit="submit()">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">型号</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" ng-disabled="disabled">
+                                <option>请选择</option>
+                                <option>SZP1-1U</option>
+                                <option>SZF10-1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="col-sm-4 control-label">名称</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" ng-disabled="disabled">
+                            <option>请选择</option>
+                            <option>航载高精度多参数剖面仪</option>
+                            <option>ARGO浮标专用CTD剖面仪 </option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="col-sm-4 control-label">编号</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" ng-disabled="disabled">
+                            <option>请选择</option>
+                            <option>Y38-193</option>
+                            <option>X38-191</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="col-sm-4 control-label">试验类型</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" ng-disabled="disabled">
+                            <option>请选择</option>
+                            <option>校准试验</option>
+                            <option>海上试验</option>
+                            <option>环境试验</option>
+                            <option>电磁兼容试验</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">试验项目</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" ng-disabled="disabled">
+                                <option>请选择</option>
+                                <option>温度</option>
+                                <option>盐度</option>
+                                <option>压力</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">起始日期</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">截止日期</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label"></label>
+                        <div class="col-sm-8">
+                            <button type="submit" class="btn btn-info"><i class="fa fa-search"></i>&nbsp;&nbsp;查询
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-xs-2">
+                    <button class="btn btn-info btn-sm" type="button">导出excel文件</button>
+                </div>
+                <div class="col-xs-2 col-xs-offset-8">
+                    <a ui-sref="mandatory.IntegratedAdd"><button class="btn btn-info btn-sm" type="button"><i class="fa fa-plus"></i>&nbsp;新增</button></a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <yunzhi-page-size ng-model="selectedEntryId"></yunzhi-page-size>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                    <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>型号</th>
+                                <th>名称</th>
+                                <th>编号</th>
+								<th>试验类型</th>
+								<th>试验项目</th>
+								<th>试验日期</th>
+								<th width="18%">导入数据</th>
+								<th width="18%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>SZP1-1U</td>
+                                <td>航载高精度多参数剖面仪</td>
+                                <td>Y38-193</td>
+                                <td>校准试验</td>
+                                <td>温度</td>
+                                <td>2017-02-12</td>
+                                <td>
+                                    <a ui-sref="mandatory.Integrsatedstep5" class="btn btn-xs btn-outline btn-info"><i
+                                        class="pe-7s-look"></i>&nbsp;查看
+                                    </a>
+                                    <a ui-sref="mandatory.Integrsatedstep4" class="btn btn-info btn-xs"><i class="fa fa-paste"></i>&nbsp;打标</a>
+                                </td>
+                                <td>
+                                    <a ui-sref="mandatory.IntegratedAdd" class="btn btn-info btn-xs"><i class="fa fa-paste"></i>&nbsp;编辑</a>
+                                    <a class="btn btn-danger btn-xs" ng-click="delete($index, object.id)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <yunzhi-page data-total-pages="data.totalPages" data-total-elements="data.totalElements" data-first="data.first" data-last="data.last" data-number="data.number" data-size="data.size" data-number-of-elements="data.numberOfElements"></yunzhi-page>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

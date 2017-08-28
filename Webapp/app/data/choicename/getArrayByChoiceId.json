@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pinyin": "qingxuanze"
+    },
+    {
+        "id": 1,
+        "name": "远程技术通信",
+        "pinyin": "yuanchengtongxin"
+    },
+    {
+        "id": 2,
+        "name": "远大技术机构",
+        "pinyin": "yuandajishujigou"
+    },
+    {
+        "id": 3,
+        "name": "30030",
+        "pinyin": "30030"
+    },
+    {
+        "id": 4,
+        "name": "30031",
+        "pinyin": "30031"
+    }
+]

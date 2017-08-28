@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pinyin": "qingxuanze"
+    },
+    {
+        "id": 1,
+        "name": "1%~4%",
+        "pinyin": "1%~4%"
+    },
+    {
+        "id": 2,
+        "name": "190nm-900nm",
+        "pinyin": "190nm-900nm"
+    },
+    {
+        "id": 3,
+        "name": "340nm-900nm",
+        "pinyin": "340nm-900nm"
+    }
+]

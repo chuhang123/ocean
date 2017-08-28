@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "仪表台",
+        "pinyin": "yibiaotai",
+        "operatorId": "1",
+        "pid": "",
+        "url": "/main/dashboard",
+        "weight": "10",
+        "status": "正常",
+        "remark": "仪表台",
+        "request": "get",
+        "isShow": "是"
+    },
+    {
+        "id": 2,
+        "name": "大数据平台",
+        "pinyin": "dashujupingtai",
+        "operatorId": "1",
+        "pid": "",
+        "url": "/main/analytics",
+        "weight": "9",
+        "status": "正常",
+        "remark": "",
+        "request": "get",
+        "isShow": "是"
+    },
+    {
+        "id": 3,
+        "name": "强制检定管理",
+        "pinyin": "qiangzhijiandingguanli",
+        "operatorId": "",
+        "pid": "",
+        "url": "/mandatory",
+        "weight": "8",
+        "status": "正常",
+        "remark": "",
+        "request": "get",
+        "isShow": "是",
+        "_child":[
+            {
+                "id": 4,
+                "name": "强制检定计量器具用户档案 ",
+                "pinyin": "qiangzhijiandingqijuyonghudangan",
+                "operatorId": "1",
+                "pid": "强制检定管理",
+                "url": "mandatory/NumberCategories",
+                "weight": "3",
+                "status": "正常",
+                "remark": "",
+                "request": "get",
+                "isShow": "是"
+            },
+            {
+                "id": 5,
+                "name": "用户强制检定计量器具档案 ",
+                "pinyin": "yonghuqiangzhijiandingjiliangqijudangan",
+                "operatorId": "1",
+                "pid": "强制检定管理",
+                "url": "/mandatory/Integrated",
+                "weight": "2",
+                "status": "正常",
+                "remark": "",
+                "request": "get",
+                "isShow": "是"
+            },
+            {
+                "id": 6,
+                "name": "用户检定申请 ",
+                "pinyin": "",
+                "operatorId": "",
+                "pid": "强制检定管理",
+                "url": "/mandatory/Userapplication",
+                "weight": "1",
+                "status": "冻结",
+                "remark": "",
+                "request": "get",
+                "isShow": "否"
+            }
+        ]
+    }
+]

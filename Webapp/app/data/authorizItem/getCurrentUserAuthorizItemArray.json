@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pingyin": "qingxuanze" 
+    },
+    {
+        "id": 1,
+        "name": "圆规",
+        "pingyin": "yuangui"
+    },
+    {
+        "id": 2,
+        "name": "量角器",
+        "pingyin": "liangjiaoqi"
+    },
+    {
+        "id": 3,
+        "name": "三角尺",
+        "pingyin": "sanjiaochi"
+    },
+    {
+        "id": 4,
+        "name": "地中衡",
+        "pingyin": "dizhongheng"
+    },
+    {
+        "id": 5,
+        "name": "百分表",
+        "pingyin": "baifenbiao"
+    },
+    {
+        "id": 6,
+        "name": "加油机",
+        "pingyin": "jiayouji"
+    }
+]

@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <div class="dataTables_wrapper form-inline dt-bootstrap no-footer" id="DataTables_Table_0_wrapper">
+                            <form class="form-horizontal ng-pristine ng-valid" ng-submit="submit()">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">供方名称:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">状态:</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control" ng-disabled="disabled">
+                                                    <option>请选择</option>
+                                                    <option>执行中</option>
+                                                    <option>已完毕</option>
+                                                    <select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label"></label>
+                                            <div class="col-sm-8">
+                                                <button type="submit" class="btn btn-info"><i class="fa fa-search"></i>&nbsp;&nbsp;查询
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-xs-2 col-xs-offset-10">
+                                    <a ui-sref="department.instrumentUserAdd">
+                                        <button class="btn btn-info btn-sm" type="button"><i class="fa fa-plus"></i>&nbsp;新增</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <yunzhi-page-size ng-model="data.size"></yunzhi-page-size>
+                                </div>
+                            </div>
+                            <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>供方名称</th>
+                                        <th>合同金额</th>
+                                        <th>经办人</th>
+                                        <th>支出令号</th>
+                                        <th>签订日期</th>
+                                        <th>是否合格</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>梦云智</td>
+                                        <td>￥10,000</td>
+                                        <td>张三</td>
+                                        <td>32432</td>
+                                        <td>2017-03-21</td>
+                                        <td>是</td>
+                                        <td>执行中</td>
+                                        <td>
+                                            <button class="btn btn-xs btn-outline btn-info"><i
+                                                class="pe-7s-look"></i>&nbsp;查看
+                                            </button>
+                                            <a  ui-sref="department.instrumentUserAdd" class="btn btn-xs btn-info"> <i class="fa fa-paste"></i>&nbsp;
+                                                编辑&nbsp;</a>&nbsp;
+                                            <a ng-click="delete($index, object)" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i>&nbsp;
+                                                删除&nbsp;</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <yunzhi-page
+                                    data-total-pages="data.totalPages"
+                                    data-total-elements="data.totalElements"
+                                    data-first="data.first"
+                                    data-last="data.last"
+                                    data-number="data.number"
+                                    data-size="data.size"
+                                    data-number-of-elements="data.numberOfElements"></yunzhi-page>
+                            备注：如果是管理员，则增加经办人的查询条件
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

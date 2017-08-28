@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pingyin": "qingxuanze" 
+    },
+    {
+        "id": 1,
+        "name": "河北省监督局",
+        "pingyin": "hebeishengjianduju"
+    },
+    {
+        "id": 2,
+        "name": "河北省廊坊市监督局",
+        "pingyin": "hebeishenglangfangshijianduju"
+    },
+    {
+        "id": 3,
+        "name": "河北省保定市监督局",
+        "pingyin": "hebeishengbaodingshijianduju"
+    },
+    {
+        "id": 4,
+        "name": "河北省唐山市监督局",
+        "pingyin": "hebeishengtangshanshijianduju"
+    }
+]

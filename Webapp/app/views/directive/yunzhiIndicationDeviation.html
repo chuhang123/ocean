@@ -1,0 +1,7 @@
+<!--示值偏差-->
+<ui-select ng-model="indicationDeviation.selected" theme="bootstrap" ng-disabled="disabled">
+    <ui-select-match placeholder="请选择">{{$select.selected.name}}</ui-select-match>
+    <ui-select-choices repeat="indicationDeviation in indicationDeviations | propsFilter: {name: $select.search, pinyin: $select.search}">
+        <div ng-bind-html="indicationDeviation.name | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>

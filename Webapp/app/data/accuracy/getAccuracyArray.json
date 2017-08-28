@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "name": "请选择",
+        "pinyin": "qingxuanze"
+    },
+    {
+        "id": 1,
+        "name": "一级",
+        "pinyin": "yiji"
+    },
+    {
+        "id": 2,
+        "name": "二级",
+        "pinyin": "erji"
+    },
+    {
+        "id": 3,
+        "name": "三级",
+        "pinyin": "sanji"
+    }
+]
