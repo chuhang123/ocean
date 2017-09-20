@@ -43,7 +43,7 @@ angular.module('webappApp')
 	};
 
 	// 执行获取数据
-	self.getAll();
+
 
 	// 提交数据
 	self.submit = function () {

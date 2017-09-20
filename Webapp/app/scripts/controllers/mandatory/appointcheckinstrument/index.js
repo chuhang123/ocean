@@ -49,7 +49,7 @@ angular.module('webappApp')
 	    };
 
 	    // 执行获取数据
-	    self.getAll();
+
 
 	    // 提交数据
 	    self.submit = function () {
@@ -74,7 +74,7 @@ angular.module('webappApp')
 
             $state.go('mandatory.instrumentCheckInfo', $stateParams, {reload: true});
         };
-	
+
 	    // 隐藏检定机构字段
 	    self.hideCheckDepartment = function() {
 		    return true;

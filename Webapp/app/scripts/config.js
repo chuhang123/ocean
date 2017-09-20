@@ -62,6 +62,11 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider, confi
             templateUrl: "views/personnel/measure/add.html",
             controller: 'test1Ctrl'
         })
+        .state('last.measureDetail', {
+            url: "/measureDetail",
+            templateUrl: "views/personnel/measure/detail.html",
+            controller: 'test1Ctrl'
+        })
         //结构部件
         .state('last.structure', {
             url: "/structure",
@@ -74,6 +79,11 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider, confi
             templateUrl: "views/personnel/structure/add.html",
             controller: 'test1Ctrl'
         })
+        .state('last.structureDetail', {
+            url: "/structureDetail",
+            templateUrl: "views/personnel/structure/detail.html",
+            controller: 'test1Ctrl'
+        })
         //电路部件
         .state('last.circuit', {
             url: "/circuit",
@@ -84,6 +94,11 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider, confi
         .state('last.circuitAdd', {
             url: "/circuitAdd",
             templateUrl: "views/personnel/circuit/add.html",
+            controller: 'test1Ctrl'
+        })
+        .state('last.circuitDetail', {
+            url: "/circuitDetail",
+            templateUrl: "views/personnel/circuit/detail.html",
             controller: 'test1Ctrl'
         })
 

@@ -58,7 +58,7 @@ angular.module('webappApp')
 		};
 
 		// 执行获取数据
-		self.getAll();
+
 
 		// 删除功能
         self.delete = function(index, id) {

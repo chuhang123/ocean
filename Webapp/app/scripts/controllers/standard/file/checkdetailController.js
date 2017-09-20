@@ -25,7 +25,7 @@ angular.module('webappApp')
                 first: true,
                 last: true,
                 size: pageSize ? pageSize : config.pageSize,
-                number: page,
+                number: 1,
                 numberOfElements: 0,
                 sort: null
             };

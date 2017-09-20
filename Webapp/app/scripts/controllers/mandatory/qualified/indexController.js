@@ -62,7 +62,7 @@ angular.module('webappApp')
     };
 
     // 执行获取数据
-    self.getAll();
+
 
     // 提交数据
     self.submit = function () {
@@ -92,7 +92,7 @@ angular.module('webappApp')
     //        first: true,
     //        last: true,
     //        size: pageSize ? pageSize : config.pageSize,
-    //        number: page,
+    //        number: 1,
     //        numberOfElements: 0,
     //        sort: null
     //    };

@@ -21,10 +21,12 @@ angular.module('webappApp')
                 first: true,
                 last: true,
                 size: pageSize ? pageSize : config.pageSize,
-                number: page,
+                number: 1,
                 numberOfElements: 0,
                 sort: null
             };
+            console.log(page);
+
         };
         self.init();
 
@@ -40,7 +42,7 @@ angular.module('webappApp')
         };
 
         // 执行获取数据
-        self.getAll();
+
 
         // 删除功能
         self.delete = function(index, id) {

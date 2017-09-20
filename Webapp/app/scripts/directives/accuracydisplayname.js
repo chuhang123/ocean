@@ -49,7 +49,7 @@ angular.module('webappApp')
 
 
                 $scope.update = function(data) {
-                    self.getAll();
+
                 	$scope.ngModel = data;
                 };
 
@@ -62,7 +62,7 @@ angular.module('webappApp')
                         $scope.accuracyDisplay.selected = $scope.datas[0];
                     } else {
                         // 如果二级类别没有选择项，则重新显示所有准确度等级
-                        self.getAll();
+
                     }
 
                 }, true);

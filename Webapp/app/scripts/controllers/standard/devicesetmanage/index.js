@@ -27,7 +27,7 @@ angular.module('webappApp')
                 first: true,
                 last: true,
                 size: pageSize ? pageSize : config.pageSize,
-                number: page,
+                number: 1,
                 numberOfElements: 0,
                 sort: null
             };
@@ -49,7 +49,7 @@ angular.module('webappApp')
         };
 
         // 执行获取数据
-        self.getAll();
+
 
         // 删除数据
         self.delete = function(index, object) {

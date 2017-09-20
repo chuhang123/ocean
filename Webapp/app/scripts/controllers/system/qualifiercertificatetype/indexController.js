@@ -26,7 +26,7 @@ angular.module('webappApp')
 				first: true,
 				last: true,
 				size: pageSize ? pageSize : config.pageSize,
-				number: page,
+				number: 1,
 				numberOfElements: 0,
 				sort: null
 			};
@@ -47,7 +47,7 @@ angular.module('webappApp')
 				});
 			}
 		};
-		self.getAll();
+
 
 		// 当学科类别发生变化时，重新加载
 		$scope.$watch('discipline', function() {

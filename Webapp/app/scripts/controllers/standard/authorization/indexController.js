@@ -65,13 +65,13 @@ angular.module('webappApp')
                 instrumentTypeId: self.params.instrumentType.id ? self.params.instrumentType.id : undefined,
                 name: self.params.name ? self.params.name : undefined
             };
-            StandardAuthorizationService.pageAllOfCurrentUserBySpecification(params, function (data) {
-                $scope.data = data;
-                if (self.params.deviceSet.id !==0) {
-                    var index = CommonService.searchByIndexName(self.params.deviceSet, 'id', $scope.data.content[0].deviceSets);
-                    $scope.deviceSet = $scope.data.content[0].deviceSets[index];
-                }
-            });
+            // StandardAuthorizationService.pageAllOfCurrentUserBySpecification(params, function (data) {
+            //     $scope.data = data;
+            //     if (self.params.deviceSet.id !==0) {
+            //         var index = CommonService.searchByIndexName(self.params.deviceSet, 'id', $scope.data.content[0].deviceSets);
+            //         $scope.deviceSet = $scope.data.content[0].deviceSets[index];
+            //     }
+            // });
         };
 
         self.pageAllOfCurrentUserBySpecification();
