@@ -29,7 +29,7 @@ angular.module('webappApp')
 			console.log(response);
 		});
 	};
-	
+
 	/**
 	 * 通过工作流获取全部的可选部门信息
 	 * @param workflowNodeId
@@ -39,22 +39,22 @@ angular.module('webappApp')
 	self.getAllByWorkflowNode = function (workflowNode, callback) {
 		self.getAllByWorkflowNodeId(workflowNode.id, callback);
 	};
-	
-	
+
+
 	// 利用$http进行数据传输
 	self.getAll = function (callback) {
 		$http.get('/data/department/getAllArray.json').then(function successCallback(response) {
 			callback(response.data);
 		}, function errorCallback() {
-		
+
 		});
 	};
-	
+
 	// 获取带有 是否具备某种器具检定能力 字段的部门列表
 	self.getAllWithCheckAbilityByWorkflowNodeAndMandatoryInstrument = function (workflowNode, mandatoryInstrument, callback) {
 		return self.getAllWithCheckAbilityByWorkflowNodeIdAndMandatoryInstrumentId(workflowNode.id, mandatoryInstrument.id, callback);
 	};
-	
+
 	// 获取带有 是否具备某种器具检定能力 字段的部门列表
 	self.getAllWithCheckAbilityByWorkflowNodeIdAndMandatoryInstrumentId = function (workflowNodeId, mandatoryInstrumentId, callback) {
 		var url = '/Department/getAllWithCheckAbilityByWorkflowNodeIdAndMandatoryInstrumentIdOfCurrentLoginUser/workflowNodeId/' + workflowNodeId + '/mandatoryInstrumentId/' + mandatoryInstrumentId;
@@ -68,7 +68,7 @@ angular.module('webappApp')
 			console.log(response);
 		});
 	};
-	
+
 	// 获取本区域上的所有技术机构
 	self.getAllTechnicalInstitutionsByDistrictId = function (districtId, callback) {
 		var url = '/Department/getAllTechnicalInstitutionsByDistrictId/' + districtId;
@@ -82,21 +82,21 @@ angular.module('webappApp')
 			console.log(response);
 		});
 	};
-	
+
 	// 获取当前用户所辖区域内的所有的某种部门类型(比如器具用户)的列表
 	self.pageByDepartmentTypePinyinOfCurrentUserManageDistricts = function (departmentTypePinyin, params, callback) {
-		var url = '/Department/pageByDepartmentTypePinyinOfCurrentLoginUserManageDistricts/' + departmentTypePinyin;
-		$http.get(url, {params: params})
-		.then(function success(response) {
-			if (callback) {
-				callback(response.data);
-			}
-		}, function error(response) {
-			var message = 'DepartmentService.pageByDepartmentTypePinyinOfCurrentUserManageDistricts->' + url + ' error: ' + response.status;
-			CommonService.error('数据请求错误', message);
-		});
+		// var url = '/Department/pageByDepartmentTypePinyinOfCurrentLoginUserManageDistricts/' + departmentTypePinyin;
+		// $http.get(url, {params: params})
+		// .then(function success(response) {
+		// 	if (callback) {
+		// 		callback(response.data);
+		// 	}
+		// }, function error(response) {
+		// 	var message = 'DepartmentService.pageByDepartmentTypePinyinOfCurrentUserManageDistricts->' + url + ' error: ' + response.status;
+		// 	CommonService.error('数据请求错误', message);
+		// });
 	};
-	
+
 	//删除功能
 	self.delete = function (id, callback) {
 		$http.delete('/Department/delete/' + id)
@@ -111,7 +111,7 @@ angular.module('webappApp')
 			}
 		});
 	};
-	
+
 	// 获取某个区域上的所有的器具用户
 	self.getAllInstrumentUserByDistrictId = function(districtId, callback) {
 		var url = '/Department/getAllInstrumentUserByDistrictId/' + districtId;
@@ -123,7 +123,7 @@ angular.module('webappApp')
 			console.log(response);
 		});
 	};
-	
+
 	return {
 		getAll: self.getAll,
 		getAllByWorkflowNode: self.getAllByWorkflowNode,

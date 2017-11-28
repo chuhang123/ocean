@@ -53,7 +53,7 @@ public class UserDataInit extends ApiInitDataListener {
             Role role = roleRepository.findOneByIsAdmin(true);
             User user1 = new User();
             user1.setDepartment(departmentRepository.findByName("测试器具用户"));
-            user1.addRole(role);
+            //user1.addRole(role);
             user1.setUsername("user1");
             user1.setPassword("user1");
             user1.setName("测试器具用户");
@@ -63,7 +63,7 @@ public class UserDataInit extends ApiInitDataListener {
             logger.info("为测试区县管理部门添加一个用户");
             User user2 = new User();
             user2.setDepartment(departmentRepository.findByName("测试区县管理部门"));
-            user2.addRole(role);
+            //user2.addRole(role);
             user2.setUsername("user2");
             user2.setPassword("user2");
             user2.setName("测试区县管理部门用户");
@@ -73,7 +73,7 @@ public class UserDataInit extends ApiInitDataListener {
             logger.info("为测试区县技术机构添加一个用户");
             User user3 = new User();
             user3.setDepartment(departmentRepository.findByName("测试区县技术机构"));
-            user3.addRole(role);
+            //user3.addRole(role);
             user3.setUsername("user3");
             user3.setPassword("user3");
             user3.setName("测试区县技术机构用户");
@@ -83,7 +83,7 @@ public class UserDataInit extends ApiInitDataListener {
             logger.info("为测试市管理部门添加一个用户");
             User user4 = new User();
             user4.setDepartment(departmentRepository.findByName("测试市管理部门"));
-            user4.addRole(role);
+            //user4.addRole(role);
             user4.setUsername("user4");
             user4.setPassword("user4");
             user4.setName("测试市管理部门");
@@ -93,7 +93,7 @@ public class UserDataInit extends ApiInitDataListener {
             logger.info("为测试市技术机构添加一个用户");
             User user5 = new User();
             user5.setDepartment(departmentRepository.findByName("测试市技术机构"));
-            user5.addRole(role);
+            //user5.addRole(role);
             user5.setUsername("user5");
             user5.setPassword("user5");
             user5.setName("测试市技术机构");
