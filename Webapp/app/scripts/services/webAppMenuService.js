@@ -1053,7 +1053,7 @@ angular.module('webappApp')
             },
             {
                 "id": 7,
-                "name": "生产装配信息",
+                "name": "整机信息",
                 "pinyin": null,
                 "createUser": null,
                 "parentWebAppMenu": null,

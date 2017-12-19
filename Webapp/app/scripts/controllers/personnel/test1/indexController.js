@@ -66,5 +66,5 @@ angular.module('webappApp')
         $scope.showShi = self.showShi;
         $scope.delete = self.delete;
         $scope.names = ["测量仪器", "非测量仪器"];
-        $scope.params = ["压力", "温度", "电导率"];
+        $scope.params = ["压力", "温度", "电导率", "其它"];
     }]);

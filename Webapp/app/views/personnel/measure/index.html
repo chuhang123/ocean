@@ -149,6 +149,27 @@
                             </tbody>
                         </table>
                     </div>
+                    <div ng-show="selectedName == '其它'">
+                        <table cellpadding="1" cellspacing="1" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th width="5%">名称</th>
+                                <th width="7%">型号</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td style="word-wrap: break-word">xxx</td>
+                                <td style="word-wrap: break-word">xxx</td>
+                                <td>
+                                    <a ui-sref="last.measureAdd" class="btn btn-info btn-xs"><i class="fa fa-paste"></i>&nbsp;编辑</a>
+                                    <a class="btn btn-danger btn-xs" ng-click="delete($index, object.id)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <yunzhi-page data-total-pages="data.totalPages" data-total-elements="data.totalElements" data-first="data.first" data-last="data.last" data-number="data.number" data-size="data.size" data-number-of-elements="data.numberOfElements"></yunzhi-page>
                 </div>
             </div>
